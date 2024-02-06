@@ -1,0 +1,17 @@
+@font-face {
+	font-family: 'Cabin-Variable';
+	src: url('Cabin-VariableFont_wdth,wght.ttf') format('truetype');
+	/* Additional font variations (if available) */
+	font-style: normal;
+	font-weight: 400; /* Regular font weight */
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Cabin-Italic-Variable';
+	src: url('Cabin-Italic-VariableFont_wdth,wght.ttf') format('truetype');
+	/* Additional font variations (if available) */
+	font-style: italic;
+	font-weight: 400; /* Regular font weight */
+	font-display: swap;
+}

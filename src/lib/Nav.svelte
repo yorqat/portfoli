@@ -1,0 +1,138 @@
+<script lang="ts">
+	import '$lib/fonts/Afacad-Variable.css';
+</script>
+
+<header>
+	<div class="container">
+		<div style="display:contents">
+			<a class="logo" href="/"> yQ </a>
+		</div>
+
+		<input type="checkbox" id="nav-toggle" checked />
+		<nav id="nav">
+			<a class="nav-route" href="/blogs">Blogs</a>
+			<a class="nav-route" href="/gallery">Art</a>
+			<a class="nav-route" href="/mockeries">Web</a>
+			<a class="nav-route" href="/reach-out">Contact</a>
+		</nav>
+	</div>
+</header>
+
+<style lang="scss">
+	header {
+		background-color: var(--header-bg);
+
+		.container {
+			padding: 1rem 2.5rem;
+
+			display: flex;
+			align-items: center;
+			flex-wrap: wrap;
+			justify-content: flex-start;
+		}
+	}
+
+	#nav {
+		display: flex;
+		align-items: center;
+		font-size: 1.5rem;
+		font-weight: 400;
+
+		text-align: center;
+		height: 40svh;
+		flex-direction: column;
+		justify-content: space-around;
+		flex: 0 0 100%;
+
+		> .nav-route {
+			transition:
+				transform 200ms,
+				font-weight 500ms;
+
+			// tab selection
+			&:focus {
+				text-decoration: underline;
+			}
+
+			&:hover {
+				transform: scale(1.2);
+				font-weight: 400;
+				cursor: pointer;
+			}
+		}
+	}
+
+	#nav-toggle {
+		all: unset;
+		height: 1.2rem;
+		cursor: pointer;
+
+		&:hover {
+			filter: brightness(0.8);
+			text-decoration: underline;
+		}
+
+		&::after {
+			content: '✗';
+			font-size: 1.6rem;
+		}
+
+		&:checked ~ #nav {
+			display: none;
+		}
+
+		&:checked::after {
+			content: '≡';
+			font-size: 1.6rem;
+		}
+	}
+
+	.logo {
+		font-size: 3rem;
+		font-weight: 700;
+		margin-right: auto;
+	}
+
+	* {
+		font-family: 'Afacad-Variable400', sans-serif;
+		box-sizing: border-box;
+		color: white;
+	}
+
+	a {
+		all: unset;
+		cursor: pointer;
+	}
+
+	/* md */
+	@media (min-width: 768px) {
+		#nav {
+			display: flex;
+			flex: 1 0 auto;
+
+			justify-content: center;
+			background-color: transparent;
+
+			// revert back wheen larger screen
+			height: 1.5rem;
+
+			> .nav-route {
+				font-size: 1.6rem;
+				font-weight: 300;
+			}
+		}
+
+		// disappears the nav when unchecked
+		#nav-toggle {
+			display: none;
+
+			&:checked ~ #nav,
+			~ #nav {
+				height: max-content;
+				gap: 2rem;
+				display: flex;
+				flex-direction: row;
+			}
+		}
+	}
+</style>

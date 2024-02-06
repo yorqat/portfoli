@@ -1,0 +1,210 @@
+@import '$lib/fonts/Cabin-Variable.css';
+@import '$lib/fonts/Arvo.css';
+@import '$lib/fonts/FiraCode.css';
+@import '$lib/fonts/OverpassMono.css';
+
+/* pre doesn't wrap for some reason
+    https://css-tricks.com/snippets/css/make-pre-text-wrap/
+*/
+
+pre {
+	white-space: pre-wrap; /* css-3 */
+	white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+	white-space: -pre-wrap; /* Opera 4-6 */
+	white-space: -o-pre-wrap; /* Opera 7 */
+	word-wrap: break-word; /* Internet Explorer 5.5+ */
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+table.chapters {
+	text-align: left;
+	font-family: 'Cabin-Variable', sans-serif;
+	width: 100%;
+	border-collapse: collapse;
+}
+
+table.chapters td,
+table.chapters th {
+	padding: 0.5rem;
+}
+
+table.chapters th {
+	padding-block: 1rem;
+	font-size: 1.2rem;
+}
+
+.chapterNo {
+	font-family: 'Fira Code', monospace;
+	font-weight: 500;
+}
+
+.chapter {
+	color: inherit;
+	text-decoration: unset;
+	opacity: 0.7;
+	color: var(--clr2);
+}
+
+.chapter:nth-child(odd) {
+	background-color: var(--bg2);
+}
+
+a.chapter-link {
+	width: 100%;
+	display: inline-block;
+}
+
+.tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+
+.tag {
+	box-shadow:
+		var(--clr) 0px 1px 3px -1px,
+		var(--clr) 0px 1px 3px -1px;
+	padding: 0.2rem 1rem;
+	font-size: 1.1rem;
+	transition: transform 0.2s;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.tag:hover {
+	transform: scale(1.2);
+}
+
+.tag:active {
+	transform: scale(0.8);
+}
+
+h1.section-title {
+	font-size: 3rem;
+}
+
+h2.section-title {
+	font-size: 2.2rem;
+}
+
+.section-title {
+	font-family: 'Cabin-Variable', sans-serif;
+	color: var(--clr2);
+}
+
+.section {
+	font-family: 'Arvo', serif;
+	font-size: 1.1rem;
+	line-height: 1.85;
+}
+
+.section-note {
+	border-left: 5px #a4a4a4 solid;
+	border-top: 1px #a4a4a4 solid;
+	border-bottom: 1px #a4a4a4 solid;
+	padding: 1rem;
+	padding-left: 2rem;
+	margin-left: 1rem;
+	font-family:
+		'Cabin-Variable',
+		system-ui,
+		-apple-system,
+		BlinkMacSystemFont,
+		'Segoe UI',
+		Roboto,
+		Oxygen,
+		Ubuntu,
+		Cantarell,
+		'Open Sans',
+		'Helvetica Neue',
+		sans-serif;
+	font-size: 0.9rem;
+	letter-spacing: 1px;
+}
+
+.section-note::before {
+	content: 'Note';
+	display: block;
+	font-size: 1.25rem;
+	font-weight: 500;
+}
+
+.section-code {
+	margin-top: 2rem;
+	font-family: 'Fira Code', monospace;
+	padding: 0.8rem;
+	-webkit-box-shadow: inset 0px 0px 5px 0px rgba(138, 138, 138, 1);
+	-moz-box-shadow: inset 0px 0px 5px 0px rgba(138, 138, 138, 1);
+	box-shadow: inset 0px 0px 5px 0px rgba(138, 138, 138, 1);
+	border-radius: 8px;
+	background-color: var(--bg2);
+}
+
+.blog-card-items {
+	display: flex;
+	flex-direction: column;
+
+	flex-wrap: wrap;
+	gap: 12px;
+	padding-block: 0.5rem 2rem;
+}
+
+a.blog-card-item-container {
+	font-family: 'Cabin-Variable', sans-serif;
+	border: 2px var(--bg2) solid;
+	border-radius: 10px;
+
+	clip-path: stroke-box;
+	display: block;
+}
+
+.blog-card-item {
+	height: 100%;
+	width: 200%;
+
+	padding: 2rem;
+	position: relative;
+	transition:
+		scale 200ms,
+		background 300ms;
+}
+
+.blog-card-item:hover {
+	background-position: -20px;
+}
+
+.blog-card-item__tags {
+	all: unset;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}
+
+.blog-card-item__tags__tag {
+	list-style-type: none;
+	background-color: var(--bg2);
+	padding: 0.4rem;
+
+	font-family: 'Arvo', serif;
+	box-shadow:
+		var(--clr) 0px 1px 3px -1px,
+		var(--clr) 0px 1px 3px -1px;
+
+	font-size: 0.8rem;
+	transition: transform 0.2s;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: scale 200ms linear;
+}
+
+.blog-card-item__tags__tag:hover {
+	scale: 1.1;
+}
+
+.blog-card-item__author {
+	filter: brightness(0.5);
+}

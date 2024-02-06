@@ -1,0 +1,35 @@
+@font-face {
+	font-family: 'Afacad-Variable400';
+	src: url('Afacad-VariableFont_wght.ttf') format('truetype');
+	/* Additional font variations (if available) */
+	font-style: normal;
+	font-weight: 400; /* Regular font weight */
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Afacad-Italic-Variable400';
+	src: url('Afacad-Italic-VariableFont_wght.ttf') format('truetype');
+	/* Additional font variations (if available) */
+	font-style: italic;
+	font-weight: 400; /* Regular font weight */
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Afacad-Variable700';
+	src: url('Afacad-VariableFont_wght.ttf') format('truetype');
+	/* Additional font variations (if available) */
+	font-style: normal;
+	font-weight: 700; /* Regular font weight */
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Afacad-Italic-Variable700';
+	src: url('Afacad-Italic-VariableFont_wght.ttf') format('truetype');
+	/* Additional font variations (if available) */
+	font-style: italic;
+	font-weight: 700; /* Regular font weight */
+	font-display: swap;
+}
