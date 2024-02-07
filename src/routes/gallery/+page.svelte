@@ -1,4 +1,5 @@
 <script type="ts">
+	import MetaHead from '$lib/MetaHead.svelte';
 	import gsap from 'gsap';
 
 	$effect(() => {
@@ -36,6 +37,12 @@
 		};
 	});
 </script>
+
+<MetaHead
+	description="Satisfying Yor Graphics"
+	keywords="Web, Framework, Frontend, CSS, JS"
+	title="Yor gallery"
+/>
 
 <div class="box"></div>
 <div class="box2"></div>

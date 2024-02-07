@@ -1,10 +1,15 @@
 <script lang="ts">
-	const { tags, title, author, anchor } = $props<{
+	const {
+		tags,
+		title,
+		anchor,
+		author = 'Yor Qat'
+	} = $props() as {
 		tags: string[];
 		title: string;
-		author: string;
 		anchor: string;
-	}>();
+		author: string;
+	};
 
 	import '$lib/blogs.css';
 </script>

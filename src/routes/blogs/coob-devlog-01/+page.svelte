@@ -1,10 +1,17 @@
 <script>
-	export const tags = ['gaming', 'game dev', 'devlog'];
+	import MetaHead from '$lib/MetaHead.svelte';
 	import BlogChapters from '$lib/BlogChapters.svelte';
+	export const tags = ['gaming', 'game dev', 'devlog'];
 	const chapters = [['Intro', 'ECS', 'Bevy']];
 	const bevy_code_1 =
 		'use bevy::prelude::*;\n\npub fn move_forward(\n  time: Res<Time>,\n  key_in: Res<Input<KeyCode>>,\n  mut player: Query<&mut Transform, With<Player>>,\n) {\n  if key_in.pressed(KeyCode::W) {\n    let mut player = player.single_mut();\n    player.translation.z += time.delta_seconds();\n  }\n}';
 </script>
+
+<MetaHead
+	title="First coob devlog"
+	description="Bypass ISP port blocking with these simple techniques"
+	image="/coob/grash-block.webp"
+/>
 
 <section class="section">
 	<h1 class="section-title">Coob's first devlog</h1>

@@ -1,7 +1,13 @@
 <script>
+	import MetaHead from '$lib/MetaHead.svelte';
 	import BlogCard from '$lib/BlogCard.svelte';
-	const defaultAuthor = 'YorQat';
 </script>
+
+<MetaHead
+	description="What Yor has to say"
+	keywords="Linux, Developer, Game, Backend, Open source, Web, Framework, Frontend, CSS, JS"
+	title="Yor blogs"
+/>
 
 <section class="section container">
 	<h1 class="section-title">Yor Blogs</h1>
@@ -21,24 +27,20 @@
 		anchor="/blogs/gsap-tl-tricks"
 		title={'Using GSAP timeline for animations'}
 		tags={['css', 'web dev']}
-		author={defaultAuthor}
 	/>
 	<BlogCard
 		anchor="/blogs/gsap-flip-tricks"
 		title={'Using GSAP FLIP for transitions'}
 		tags={['css', 'web dev']}
-		author={defaultAuthor}
 	/>
 	<BlogCard
 		anchor="/blogs/coob-devlog-01"
 		title={'First coob devlog'}
 		tags={['gaming', 'game dev', 'devlog']}
-		author={defaultAuthor}
 	/>
 	<BlogCard
 		anchor="/blogs/bypass-isp-how-to"
 		title={'How to bypass ISP port blocking'}
 		tags={['wireguard', 'linode', 'web dev', 'linux']}
-		author={defaultAuthor}
 	/>
 </div>
