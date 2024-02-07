@@ -1,4 +1,5 @@
 <script>
+	import MetaHead from '$lib/MetaHead.svelte';
 	export const tags = ['Wireguard', 'Linode', 'Web dev', 'Linux'];
 
 	const chapters = [
@@ -28,9 +29,11 @@ AllowedIPs = 192.168.4.2/32`;
 	import BlogChapters from '$lib/BlogChapters.svelte';
 </script>
 
-<svelte:head>
-	<title>How to bypass ISP port blocking</title>
-</svelte:head>
+<MetaHead
+	title="How to bypass ISP port blocking"
+	description="Bypass ISP port blocking with these simple techniques"
+	image="/bypass-isp-how-to/0.webp"
+/>
 
 <section class="section">
 	<h1 class="section-title">How to bypass ISP port blocking</h1>
