@@ -9,7 +9,7 @@
 
 <MetaHead
 	title="First coob devlog"
-	description="Bypass ISP port blocking with these simple techniques"
+	description="So right off the bat, this isn't intended to be a minecraft clone, just that..."
 	image="/coob/grash-block.webp"
 />
 
