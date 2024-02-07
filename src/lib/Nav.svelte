@@ -8,7 +8,7 @@
 			<a class="logo" href="/"> yQ </a>
 		</div>
 
-		<input type="checkbox" id="nav-toggle" checked />
+		<input aria-label="nav toggle" type="checkbox" id="nav-toggle" checked />
 		<nav id="nav">
 			<a class="nav-route" href="/blogs">Blogs</a>
 			<a class="nav-route" href="/gallery">Art</a>
