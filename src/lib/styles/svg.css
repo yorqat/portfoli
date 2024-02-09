@@ -1,0 +1,14 @@
+svg {
+	height: 1.2rem;
+	fill: var(--clr1);
+}
+
+svg:hover {
+	fill: var(--clr2);
+}
+
+@media (min-width: 768px) {
+	svg {
+		height: 2rem;
+	}
+}
