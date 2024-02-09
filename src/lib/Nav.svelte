@@ -9,6 +9,7 @@
 		</div>
 
 		<input aria-label="nav toggle" type="checkbox" id="nav-toggle" checked />
+
 		<nav id="nav">
 			<a class="nav-route" href="/blogs">Blogs</a>
 			<a class="nav-route" href="/gallery">Art</a>
@@ -20,16 +21,17 @@
 
 <style lang="scss">
 	header {
+		grid-area: 1 / 1 / 2 / 4;
 		background-color: var(--header-bg);
+	}
 
-		.container {
-			padding: 1rem 2.5rem;
-
-			display: flex;
-			align-items: center;
-			flex-wrap: wrap;
-			justify-content: flex-start;
-		}
+	.container {
+		padding: 1rem 2.5rem;
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		height: 100%;
 	}
 
 	#nav {
