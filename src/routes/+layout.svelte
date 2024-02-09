@@ -1,14 +1,15 @@
 <script>
 	const { children } = $props();
 	import Nav from '$lib/Nav.svelte';
+	import Footer from '$lib/Footer.svelte';
 </script>
 
-<div class="containerer">
+<div id="viewport">
 	<Nav />
 	<div id="content" class="container">
 		{@render children()}
 	</div>
-	<footer>Special thanks to Erin and Joan for being my girlfriends</footer>
+	<Footer />
 </div>
 
 <style>
@@ -20,21 +21,19 @@
 		scroll-behavior: smooth;
 	}
 
-	footer {
-		font-size: 1.1rem;
-		padding: 1.5rem;
-		background-color: var(--bg2);
-		text-align: center;
-	}
-
-	.containerer {
-		display: flex;
-		flex-direction: column;
+	#viewport {
 		height: 100svh;
+
+		display: grid;
+		grid-template-columns: 1fr 1120px 1fr;
+		grid-template-rows: minmax(100px, max-content) 1fr minmax(0, max-content);
+		grid-column-gap: 20px;
+		grid-row-gap: 0px;
 	}
 
 	#content {
-		flex: 1;
+		overflow-y: scroll;
+		grid-area: 2 / 1 / 3 / 4;
 	}
 
 	:global(:root) {
@@ -51,9 +50,7 @@
 		color: var(--clr);
 	}
 
-	/* Applying styles for the dark color scheme */
 	@media (prefers-color-scheme: dark) {
-		/* Your dark mode styles here */
 		:global(:root) {
 			--bg: #141822;
 			--bg2: rgb(12, 12, 12);
@@ -61,8 +58,6 @@
 			--clr2: #fff;
 			--header-bg: rgb(28, 77, 114);
 		}
-
-		/* Other dark mode styles */
 	}
 
 	:global(.container) {
@@ -72,9 +67,17 @@
 
 	/* 2xs */
 	@media (min-width: 200px) {
+		#viewport {
+			grid-template-columns: 0 1fr 0;
+		}
+
 		:global(.container) {
 			width: 100%;
 			/* border: 2px purple solid; */
+		}
+
+		:global(p) {
+			padding-bottom: 2rem;
 		}
 
 		:global(.img) {
@@ -97,7 +100,7 @@
 	/* sm */
 	@media (min-width: 640px) {
 		:global(.container) {
-			width: 640px;
+			/* width: 100%; */
 			/* border: 2px teal solid; */
 		}
 
@@ -110,8 +113,9 @@
 	/* md */
 	@media (min-width: 768px) {
 		:global(.container) {
+			max-width: 768px;
 			/* border: 2px green solid; */
-			width: 768px;
+			/* width: 768px; */
 		}
 	}
 
@@ -134,7 +138,7 @@
 	/* 2xl */
 	@media (min-width: 1536px) {
 		:global(.container) {
-			/* width: 1536px; */
+			max-width: 1120px;
 			/* border: 2px red solid; */
 		}
 	}
