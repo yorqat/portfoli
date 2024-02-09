@@ -1,6 +1,6 @@
 <script>
-	import ConstructionDumpDumper from './svg/construction-dump-dumper-svgrepo-com.svelte';
-	import ConstructionDiggerExcavation from './svg/construction-digger-excavation-svgrepo-com.svelte';
+	import ConstructionDumpDumper from './svg/Dumper.svelte';
+	import ConstructionDiggerExcavation from './svg/DiggerExcavation.svelte';
 </script>
 
 <section class="viewport centered">
@@ -8,11 +8,11 @@
 
 	<div class="construction">
 		<div class="dumper">
-			<ConstructionDumpDumper width="10rem" height="10rem" fill="#002d62" />
+			<ConstructionDumpDumper />
 		</div>
 
 		<div class="excavator">
-			<ConstructionDiggerExcavation width="10rem" height="10rem" fill="#002d62" />
+			<ConstructionDiggerExcavation />
 		</div>
 	</div>
 </section>
@@ -40,16 +40,8 @@
 		position: relative;
 	}
 
-	/* .centered {
-		position: absolute;
-		top: 30%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-	} */
-
 	.construction {
 		background-size: cover;
-		/* background: #fbff8b; */
 		height: 20rem;
 		width: 100%;
 		position: absolute;
