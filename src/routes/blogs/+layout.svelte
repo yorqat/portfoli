@@ -1,5 +1,5 @@
 <script>
-	import '$lib/blogs.css';
+	import '$lib/styles/blogs.css';
 	const { children } = $props();
 </script>
 

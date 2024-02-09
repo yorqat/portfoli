@@ -11,7 +11,7 @@
 		author: string;
 	};
 
-	import '$lib/blogs.css';
+	import '$lib/styles/blogs.css';
 </script>
 
 <a class="blog-card-item-container" href={anchor}>
