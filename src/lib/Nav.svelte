@@ -41,7 +41,7 @@
 		font-weight: 400;
 
 		text-align: center;
-		height: 40svh;
+		height: 80svh;
 		flex-direction: column;
 		justify-content: space-around;
 		flex: 0 0 100%;
@@ -75,8 +75,9 @@
 		}
 
 		&::after {
+			height: 100%;
 			content: '✗';
-			font-size: 1.6rem;
+			font-size: 2rem;
 		}
 
 		&:checked ~ #nav {
@@ -85,12 +86,12 @@
 
 		&:checked::after {
 			content: '≡';
-			font-size: 1.6rem;
+			font-size: 2rem;
 		}
 	}
 
 	.logo {
-		font-size: 3rem;
+		font-size: 2.5rem;
 		font-weight: 700;
 		margin-right: auto;
 	}
