@@ -2,13 +2,15 @@
 	const { children } = $props();
 	import Nav from '$lib/Nav.svelte';
 	import Footer from '$lib/Footer.svelte';
+	import SkipNav from '$lib/SkipNav.svelte';
 </script>
 
 <div id="viewport">
+	<SkipNav />
 	<Nav />
-	<div id="content" class="container">
+	<main id="content" class="container">
 		{@render children()}
-	</div>
+	</main>
 	<Footer />
 </div>
 
@@ -25,14 +27,15 @@
 		height: 100svh;
 
 		display: grid;
-		grid-template-columns: 1fr 1120px 1fr;
-		grid-template-rows: minmax(100px, max-content) 1fr minmax(0, max-content);
+		grid-template-columns: minmax(0px, 1fr) 1120px minmax(0px, 1fr);
+		grid-template-rows: minmax(0px, max-content) 1fr minmax(0, max-content);
 		grid-column-gap: 20px;
 		grid-row-gap: 0px;
 	}
 
 	#content {
 		overflow-y: scroll;
+		position: relative;
 		grid-area: 2 / 1 / 3 / 4;
 	}
 
@@ -53,10 +56,13 @@
 	@media (prefers-color-scheme: dark) {
 		:global(:root) {
 			--bg: #141822;
+			--bg: #11131a;
 			--bg2: rgb(12, 12, 12);
 			--clr: #c1c1c1;
 			--clr2: #fff;
 			--header-bg: rgb(28, 77, 114);
+			--header-bg: rgb(22, 28, 55);
+			
 		}
 	}
 
@@ -130,6 +136,7 @@
 	/* xl */
 	@media (min-width: 1280px) {
 		:global(.container) {
+			max-width: 1120px;
 			/* width: 1280px; */
 			/* border: 2px orange solid; */
 		}
@@ -138,7 +145,6 @@
 	/* 2xl */
 	@media (min-width: 1536px) {
 		:global(.container) {
-			max-width: 1120px;
 			/* border: 2px red solid; */
 		}
 	}
