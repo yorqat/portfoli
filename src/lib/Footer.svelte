@@ -14,13 +14,13 @@
 			<!-- TODO: leave message here -->
 		</div>
 		<div class="socials">
-			<a href={github} target="_blank">
+			<a href={github} aria-label="Learn more in my github profile" target="_blank">
 				<Github />
 			</a>
-			<a href={linkedin} target="_blank">
+			<a href={linkedin} aria-label="Recruit me in LinkedIn" target="_blank">
 				<Linkedin />
 			</a>
-			<a href={twitter} target="_blank">
+			<a href={twitter} aria-label="See my opinions on current tech industry" target="_blank">
 				<Twitter />
 			</a>
 		</div>
@@ -51,6 +51,6 @@
 
 	.socials {
 		display: flex;
-		gap: 0.6rem;
+		gap: 0.75rem;
 	}
 </style>
