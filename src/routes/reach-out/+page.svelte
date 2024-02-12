@@ -1,7 +1,7 @@
 <script>
 	import MetaHead from '$lib/MetaHead.svelte';
-	import Send from '$lib/svg/Send.svelte';
 	import Linkedin from '$lib/svg/LinkedinButton.svelte';
+	import Email from '$lib/svg/Email.svelte';
 
 	import '$lib/fonts/HammersmithOne.css';
 	import '$lib/fonts/supreme.css';
@@ -14,35 +14,33 @@
 />
 
 <div class="separator">
-	<h1>Reach instantly</h1>
-	<p>through these platforms</p>
+	<div class="separator__title">Reach instantly</div>
+	<div class="separator__subtitle">through these platforms</div>
 </div>
 
 <a href="mailto:dev.yorqat@gmail.com">
-	<Send />
-	<h3>Compose</h3>
+	<Email />
+	<div class="card-caption">Compose</div>
 </a>
 
 <a href="mailto:dev.yorqat@gmail.com">
 	<Linkedin />
-	<h3>Connect</h3>
+	<div class="card-caption">Connect</div>
 </a>
 
 <div class="separator">
-	<h1>Or hear back from me</h1>
-	<p>by verifying your email</p>
+	<div class="separator__title">Or hear back from me</div>
+	<div class="separator__subtitle">by verifying your email</div>
 </div>
 
 <form>
 	<label for="email" id="email-label"> Email </label>
 	<input type="email" name="email" id="email" placeholder="katzen@email.com" />
 	<label for="text" id="text-label"> Message </label>
-	<textarea
-		name="text"
-		id="text"
-		placeholder="hallo there, wie mochte dir Entwickler skills. Bitte arbeiten hier bitte bitte bitte "
-	></textarea>
-	<button type="submit">Send</button>
+	<textarea name="text" id="text" placeholder="tell me what you need..."></textarea>
+	<button type="submit">
+		<span class="submit-label"> Send </span>
+	</button>
 </form>
 
 <style>
@@ -57,21 +55,28 @@
 
 	.separator {
 		padding-top: 2rem;
+		margin-bottom: 1.75rem;
 	}
 
-	h1 {
-		line-height: 10%;
+	.separator__title {
+		font-weight: 800;
+		font-size: 2rem;
+		line-height: 100%;
 		color: var(--clr2);
 		font-family: 'Supreme-Light', sans-serif;
 	}
 
-	p {
-		letter-spacing: 1.25px;
+	.separator__subtitle {
+		margin-top: 0.5rem;
+	}
+
+	.card-caption {
+		font-size: 1.2rem;
+		padding-block: 1.2rem;
 	}
 
 	label {
 		padding: 1.2rem 1.8rem;
-		/* text-align: center; */
 	}
 
 	#email-label {
@@ -91,20 +96,37 @@
 		font-size: 2rem;
 	}
 
+	.submit-label {
+		padding-inline: 0.5rem;
+	}
+
 	button {
 		border: unset;
 		text-align: center;
 
-		color: var(--bg2);
-		background-color: var(--clr);
+		color: white;
+		background-color: var(--header-bg);
 		padding-block: 2rem;
 		cursor: pointer;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 
-	a:hover,
-	button:hover {
+	a:hover {
 		background-color: var(--clr2);
 		color: var(--bg2);
+	}
+
+	.submit-label {
+		transition: transform 300ms;
+		text-transform: uppercase;
+		font-size: 1.25rem;
+	}
+
+	button:hover .submit-label {
+		transform: scale(1.2);
 	}
 
 	form {
@@ -115,7 +137,6 @@
 		color: var(--clr);
 		background-color: var(--bg2);
 		border-radius: 12px;
-		max-width: 50rem;
 		margin-bottom: 1rem;
 	}
 
@@ -123,6 +144,7 @@
 	textarea {
 		border-radius: 0;
 		border: 4px solid var(--bg2);
+		border-bottom: unset;
 		background-color: var(--bg);
 		color: var(--clr);
 		padding-left: 2rem;

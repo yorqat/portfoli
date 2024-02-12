@@ -60,8 +60,7 @@
 			--bg2: rgb(12, 12, 12);
 			--clr: #c1c1c1;
 			--clr2: #fff;
-			--header-bg: rgb(28, 77, 114);
-			--header-bg: rgb(22, 28, 55);
+			--header-bg: #002d62;
 		}
 	}
 

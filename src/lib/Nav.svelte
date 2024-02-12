@@ -67,7 +67,7 @@
 
 		&::after {
 			content: '⌄';
-			font-size: 2rem;
+			font-size: 2.2rem;
 		}
 
 		&:checked::after {
