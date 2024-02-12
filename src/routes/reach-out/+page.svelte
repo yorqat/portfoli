@@ -147,13 +147,13 @@
 		border-bottom: unset;
 		background-color: var(--bg);
 		color: var(--clr);
+		color: var(--clr2);
 		padding-left: 2rem;
 		font-family: 'Supreme-Light', sans-serif;
 	}
 
 	input:focus,
 	textarea:focus {
-		color: var(--clr2);
 	}
 
 	a {
