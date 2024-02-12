@@ -97,7 +97,6 @@
 
 		color: var(--bg2);
 		background-color: var(--clr);
-		/* border-radius: 12px; */
 		padding-block: 2rem;
 		cursor: pointer;
 	}
@@ -105,13 +104,13 @@
 	a:hover,
 	button:hover {
 		background-color: var(--clr2);
+		color: var(--bg2);
 	}
 
 	form {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: 1fr 1fr auto auto;
-		/* width: max-content; */
 
 		color: var(--clr);
 		background-color: var(--bg2);
