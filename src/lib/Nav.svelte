@@ -52,20 +52,17 @@
 		&:focus,
 		&:hover::after,
 		&:hover {
-			// text-decoration: underline;
 			transform: scale(1.1);
 		}
 	}
 
 	#nav-toggle-label {
 		grid-area: 1 / 3 / 3 / 4;
-		// margin-right: 1rem;
 	}
 
 	#a11y {
 		@include no-appearance;
 		position: absolute;
-		height: 3.5rem;
 		padding-left: 0.2rem;
 
 		&::after {

@@ -1,0 +1,6 @@
+@font-face {
+	font-family: 'HammersmithOne';
+	src: url('HammersmithOne-Regular.ttf') format('truetype');
+	font-weight: 1 1000; /* Define the range of font weights (from 1 to 1000) */
+	font-display: swap;
+}

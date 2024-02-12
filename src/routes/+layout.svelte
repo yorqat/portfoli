@@ -62,7 +62,6 @@
 			--clr2: #fff;
 			--header-bg: rgb(28, 77, 114);
 			--header-bg: rgb(22, 28, 55);
-			
 		}
 	}
 
