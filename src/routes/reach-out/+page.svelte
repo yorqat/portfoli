@@ -2,6 +2,7 @@
 	import MetaHead from '$lib/MetaHead.svelte';
 	import Linkedin from '$lib/svg/LinkedinButton.svelte';
 	import Email from '$lib/svg/Email.svelte';
+	import Fiverr from '$lib/svg/Fiverr.svelte';
 
 	import '$lib/fonts/HammersmithOne.css';
 	import '$lib/fonts/supreme.css';
@@ -23,9 +24,14 @@
 	<div class="card-caption">Compose</div>
 </a>
 
-<a href="mailto:dev.yorqat@gmail.com">
+<a href="https://www.linkedin.com/in/aurora-paisley-7aba962b2/">
 	<Linkedin />
 	<div class="card-caption">Connect</div>
+</a>
+
+<a href="https://www.fiverr.com/aurorapaisley/create-your-unique-and-selling-website">
+	<Fiverr />
+	<div class="card-caption">Comission</div>
 </a>
 
 <div class="separator">
