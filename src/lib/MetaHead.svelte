@@ -4,7 +4,7 @@
 		description = "You're in a Yor website",
 		keywords = 'Linux, Developer, Game, Backend, Open source, Web, Framework, Frontend, CSS, JS',
 		author = 'Yor Qat',
-		image = '/favicon.webp'
+		image = '/favicon.svg'
 	} = $props() as {
 		title: string;
 		description: string;
