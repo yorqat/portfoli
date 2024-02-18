@@ -80,10 +80,6 @@
 			/* border: 2px purple solid; */
 		}
 
-		:global(p) {
-			/* padding-bottom: 1.2rem; */
-		}
-
 		:global(.img) {
 			width: 100%;
 			padding-block: 0.5rem;
