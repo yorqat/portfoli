@@ -81,7 +81,7 @@
 		}
 
 		:global(p) {
-			padding-bottom: 2rem;
+			/* padding-bottom: 1.2rem; */
 		}
 
 		:global(.img) {
