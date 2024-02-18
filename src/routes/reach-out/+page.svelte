@@ -121,6 +121,10 @@
 	}
 
 	a:hover {
+		color: var(--clr2);
+	}
+
+	a:focus {
 		background-color: var(--clr2);
 		color: var(--bg2);
 	}
