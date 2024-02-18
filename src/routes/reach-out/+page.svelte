@@ -29,7 +29,7 @@
 	<div class="card-caption">Connect</div>
 </a>
 
-<a href="https://www.fiverr.com/aurorapaisley/create-your-unique-and-selling-website">
+<a href="https://www.fiverr.com/aurorapaisley/create-your-unique-and-selling-website" target="_blank">
 	<Fiverr />
 	<div class="card-caption">Comission</div>
 </a>
