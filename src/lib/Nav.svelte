@@ -11,14 +11,21 @@
 			<input aria-label="a11y-toggle" type="checkbox" name="a11y" id="a11y" />
 
 			<div id="a11y-ctx-menu">
-				<label for="reduced-motion">
-					reduced-motion
+				<div class="a11y-ctx-menu__title">Preferences</div>
+				<div class="a11y-ctx-menu__item">
+					<label for="reduced-motion"> reduced-motion </label>
 					<input type="checkbox" name="reduced-motion" id="reduced-motion" />
-				</label>
-				<label for="theme-switch">
-					theme
+				</div>
+
+				<div class="a11y-ctx-menu__item">
+					<label for="theme-switch"> theme </label>
 					<input type="checkbox" name="theme-switch" id="theme-switch" />
-				</label>
+				</div>
+
+				<div class="a11y-ctx-menu__item">
+					<label for="lang-switch"> language </label>
+					<input type="checkbox" name="lang-switch" id="lang-switch" />
+				</div>
 			</div>
 		</div>
 
@@ -30,8 +37,6 @@
 			<a class="nav-route" href="/mockeries">Web</a>
 			<a class="nav-route" href="/reach-out">Contact</a>
 		</nav>
-
-		<!-- <button>Hire now</button> -->
 	</div>
 </header>
 
@@ -63,26 +68,48 @@
 	#a11y {
 		@include no-appearance;
 		position: absolute;
-		padding-left: 0.2rem;
+		top: 2rem;
+		padding-left: 0.6rem;
 
 		&::after {
-			content: '⌄';
-			font-size: 2.2rem;
+			position: absolute;
+			color: white;
+			content: '↴';
+			content: '↷';
+			font-size: 1.6rem;
+			transition: transform 200ms;
 		}
 
 		&:checked::after {
-			content: '⌃';
+			transform: scaleY(-1) rotate(90deg);
 		}
 	}
 
 	#a11y-ctx-menu {
+		display: none;
 		position: absolute;
 
-		background-color: var(--header-bg);
-		padding: 1.2rem 1rem;
-		width: 20rem;
-		display: none;
-		border: 2px solid var(--bg);
+		background-color: var(--bg2);
+		color: var(--clr);
+		margin-top: 2rem;
+		padding: 1.6rem 2rem;
+		border-radius: 12px;
+		font-family: 'Afacad-Variable400', sans-serif;
+		font-size: 1.2rem;
+
+		.a11y-ctx-menu__title {
+			color: var(--clr2);
+			font-size: 2rem;
+			margin-bottom: 1.6rem;
+			font-family: 'Afacad-Variable700', sans-serif;
+		}
+
+		.a11y-ctx-menu__item {
+			display: flex;
+			gap: 2rem;
+			justify-content: space-between;
+			cursor: pointer;
+		}
 	}
 
 	#a11y:checked ~ #a11y-ctx-menu {
@@ -110,7 +137,7 @@
 	header {
 		grid-area: 1 / 1 / 2 / 4;
 		background-color: var(--header-bg);
-		background-color: #002d62;
+		color: white;
 	}
 
 	.container {
@@ -129,6 +156,8 @@
 		align-items: center;
 		font-size: 1.5rem;
 		font-weight: 400;
+		font-family: 'Gugi', sans-serif;
+		font-family: 'Afacad-Variable400', sans-serif;
 
 		text-align: center;
 		flex-direction: column;
@@ -163,9 +192,14 @@
 		}
 
 		&::after {
-			content: 'x';
+			font-family: 'Afacad-Variable700', sans-serif;
+			content: 'X';
+			// font-weight: ;
 			font-size: 1.8rem;
 			position: absolute;
+			color: white;
+
+			transition: rotate 200ms ease-in-out;
 		}
 
 		&:checked ~ #nav {
@@ -174,6 +208,7 @@
 
 		&:checked::after {
 			content: '≡';
+			rotate: 180deg;
 			font-size: 2rem;
 		}
 	}
@@ -184,11 +219,7 @@
 		font-size: 2.5rem;
 		font-weight: 700;
 		grid-area: 1 / 1 / 3 / 2;
-	}
-
-	* {
 		font-family: 'Gugi', sans-serif;
-		color: white;
 	}
 
 	a {
