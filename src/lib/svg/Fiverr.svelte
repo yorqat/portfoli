@@ -3,15 +3,6 @@
 </script>
 
 <svg viewBox="0 0 480 512" xmlns="http://www.w3.org/2000/svg"
-	><defs
-		><style>
-			.cls-1 {
-				stroke: #000;
-				stroke-linecap: round;
-				stroke-linejoin: round;
-				stroke-width: 20px;
-			}
-		</style></defs
 	><g data-name="Layer 2" id="Layer_2"
 		><g id="fiverr"
 			><path
