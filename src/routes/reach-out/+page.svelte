@@ -162,10 +162,6 @@
 		font-family: 'Supreme-Light', sans-serif;
 	}
 
-	input:focus,
-	textarea:focus {
-	}
-
 	a {
 		color: var(--clr);
 		background-color: var(--bg2);
@@ -190,11 +186,5 @@
 	button:focus {
 		color: var(--bg2);
 		background-color: var(--clr2);
-	}
-
-	@media (max-width: 400px) {
-		form {
-			display: flex;
-		}
 	}
 </style>
