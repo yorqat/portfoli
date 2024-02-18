@@ -1,5 +1,6 @@
 <script>
 	import MetaHead from '$lib/MetaHead.svelte';
+	import '$lib/fonts/supreme.css';
 </script>
 
 <MetaHead
@@ -8,9 +9,13 @@
 	title="Yor homepage"
 />
 
-<h1>Hi, Qat. I'm Yor</h1>
+<h1 class="hero">Hi, Qat. I'm Yor</h1>
 
 <style lang="scss">
+	.hero {
+		font-family: 'Supreme-Light', sans-serif;
+	}
+
 	section {
 		border: 1px yellow solid;
 	}
