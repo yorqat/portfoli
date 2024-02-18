@@ -41,7 +41,7 @@
 
 <form>
 	<label for="email" id="email-label"> Email </label>
-	<input type="email" name="email" id="email" placeholder="katzen@email.com" />
+	<input type="email" name="email" id="email" placeholder="kat@mail.com" />
 	<label for="text" id="text-label"> Message </label>
 	<textarea name="text" id="text" placeholder="tell me what you need..."></textarea>
 	<button type="submit">
