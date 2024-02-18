@@ -19,12 +19,12 @@
 	<div class="separator__subtitle">through these platforms</div>
 </div>
 
-<a href="mailto:dev.yorqat@gmail.com">
+<a href="mailto:dev.yorqat@gmail.com" target="_blank">
 	<Email />
 	<div class="card-caption">Compose</div>
 </a>
 
-<a href="https://www.linkedin.com/in/aurora-paisley-7aba962b2/">
+<a href="https://www.linkedin.com/in/aurora-paisley-7aba962b2/" target="_blank">
 	<Linkedin />
 	<div class="card-caption">Connect</div>
 </a>
