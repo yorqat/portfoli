@@ -150,23 +150,26 @@ h2.section-title {
 
 	flex-wrap: wrap;
 	gap: 12px;
-	padding-block: 0.5rem 2rem;
+	/* padding-block: 0.5rem 2rem; */
 }
 
 a.blog-card-item-container {
 	font-family: 'Cabin-Variable', sans-serif;
-	border: 2px var(--bg2) solid;
-	border-radius: 10px;
+	background-color: var(--bg2);
+	border-radius: 12px;
 
-	clip-path: stroke-box;
 	display: block;
+
+	box-shadow:
+		var(--clr) 0px 1px 3px -1px,
+		var(--clr) 0px 1px 3px -1px;
 }
 
 .blog-card-item {
 	height: 100%;
 	width: 100%;
 
-	padding: 2rem;
+	padding-inline: 2rem;
 	position: relative;
 	transition:
 		scale 200ms,
