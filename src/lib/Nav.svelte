@@ -69,15 +69,19 @@
 		@include no-appearance;
 		position: absolute;
 		top: 2rem;
-		padding-left: 0.6rem;
+		margin-left: 1rem;
 
 		&::after {
 			position: absolute;
-			color: white;
-			content: '↴';
+			background-color: white;
+			color: var(--header-bg);
+			box-shadow:  inset 0px 0px 5px 0px rgba(138, 138, 138, 1);
 			content: '↷';
 			font-size: 1.6rem;
 			transition: transform 200ms;
+			height: 1.5rem;
+			border-radius: 50%;
+			aspect-ratio: 1;
 		}
 
 		&:checked::after {
@@ -94,6 +98,7 @@
 		margin-top: 2rem;
 		padding: 1.6rem 2rem;
 		border-radius: 12px;
+		box-shadow: 0px 0px 5px 0px rgba(138, 138, 138, 1);
 		font-family: 'Afacad-Variable400', sans-serif;
 		font-size: 1.2rem;
 
@@ -154,7 +159,7 @@
 	#nav {
 		display: flex;
 		align-items: center;
-		font-size: 1.5rem;
+		font-size: 2rem;
 		font-weight: 400;
 		font-family: 'Gugi', sans-serif;
 		font-family: 'Afacad-Variable400', sans-serif;
