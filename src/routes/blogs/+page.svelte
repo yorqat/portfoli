@@ -22,7 +22,7 @@
 	<pre class="section-code">$ echo 'This is what code may look like'</pre>
 </section>
 
-<div class="blog-card-items">
+<div class="blog-card-items container">
 	<BlogCard
 		anchor="/blogs/gsap-tl-tricks"
 		title={'Using GSAP timeline for animations'}

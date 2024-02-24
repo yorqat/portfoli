@@ -9,7 +9,7 @@
 	title="Yor homepage"
 />
 
-<h1 class="hero">Hi, Qat. I'm Yor</h1>
+<h1 class="hero container">Hi, Qat. I'm Yor</h1>
 
 <style lang="scss">
 	.hero {

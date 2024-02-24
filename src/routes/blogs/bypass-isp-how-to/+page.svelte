@@ -35,7 +35,7 @@ AllowedIPs = 192.168.4.2/32`;
 	image="/bypass-isp-how-to/0.webp"
 />
 
-<section class="section">
+<section class="section container">
 	<h1 class="section-title">How to bypass ISP port blocking</h1>
 	<div class="tags">
 		{#each tags as tag}
@@ -62,7 +62,7 @@ AllowedIPs = 192.168.4.2/32`;
 	</p>
 </section>
 
-<section class="section" id="0.1">
+<section class="section container" id="0.1">
 	<h2 class="section-title">Create a VPS instance</h2>
 	<p>
 		Any VPS provider that can provision a debian-based distro should work. For the sake of
@@ -110,7 +110,7 @@ AllowedIPs = 192.168.4.2/32`;
 		</li>
 	</ol>
 </section>
-<section class="section" id="0.2">
+<section class="section container" id="0.2">
 	<h2 class="section-title">Configure wireguard</h2>
 	<p>
 		Wireguard is a open source, highly configurable VPN software that establishes encrypted tunnels
@@ -168,7 +168,7 @@ $ systemctl enable wg-quick@wg0</pre>
 	</ol>
 </section>
 
-<section class="section" id="1.0">
+<section class="section container" id="1.0">
 	<h2 class="section-title">Testing tunnel</h2>
 	<p>
 		Moment of truth, if you did everything right up to this point, you should be able to observe
@@ -180,7 +180,7 @@ $ ping 192.168.4.2 # From VPS
 </pre>
 </section>
 
-<section class="section" id="1.1">
+<section class="section container" id="1.1">
 	<h2 class="section-title">Forwarding traffic through your tunnel</h2>
 	<p>
 		Unfortunately receiving traffic from the VPS won't mean receiving it from the home server. So
@@ -209,6 +209,6 @@ $ iptables -t  nat -A POSTROUTING -o wg0 -p tcp --dport 80 -d 192.168.4.2 -j SNA
 </pre>
 </section>
 
-<section class="section" id="1.2">
+<section class="section container" id="1.2">
 	<h2 class="section-title">Meow</h2>
 </section>

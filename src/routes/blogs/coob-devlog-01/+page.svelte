@@ -13,7 +13,7 @@
 	image="/coob/grash-block.webp"
 />
 
-<section class="section">
+<section class="section container">
 	<h1 class="section-title">Coob's first devlog</h1>
 	<div class="tags">
 		{#each tags as tag}
@@ -54,7 +54,7 @@
 	</p>
 </section>
 
-<section class="section">
+<section class="section container">
 	<h2 class="section-title">Bevy</h2>
 	<p id="0.5">
 		Bevy's ECS is only a small but critical part of the framework. It also abstracts a lot of

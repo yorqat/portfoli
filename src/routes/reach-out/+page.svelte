@@ -6,6 +6,7 @@
 
 	import '$lib/fonts/HammersmithOne.css';
 	import '$lib/fonts/supreme.css';
+	import Nojs from '$lib/svg/Nojs.svelte';
 </script>
 
 <MetaHead
@@ -14,32 +15,38 @@
 	title="Reach Yor developer"
 />
 
-<div class="separator">
+<div class="separator container">
 	<div class="separator__title">Reach instantly</div>
 	<div class="separator__subtitle">through these platforms</div>
 </div>
 
-<a href="mailto:dev.yorqat@gmail.com" target="_blank">
-	<Email />
-	<div class="card-caption">Compose</div>
-</a>
+<div class="container">
+	<a href="mailto:dev.yorqat@gmail.com" target="_blank" class="container">
+		<Email />
+		<div class="card-caption">Compose</div>
+	</a>
 
-<a href="https://www.linkedin.com/in/aurora-paisley-7aba962b2/" target="_blank">
-	<Linkedin />
-	<div class="card-caption">Connect</div>
-</a>
+	<a href="https://www.linkedin.com/in/aurora-paisley-7aba962b2/" target="_blank" class="container">
+		<Linkedin />
+		<div class="card-caption">Connect</div>
+	</a>
 
-<a href="https://www.fiverr.com/aurorapaisley/create-your-unique-and-selling-website" target="_blank">
-	<Fiverr />
-	<div class="card-caption">Comission</div>
-</a>
+	<a
+		href="https://www.fiverr.com/aurorapaisley/create-your-unique-and-selling-website"
+		target="_blank"
+		class="container"
+	>
+		<Fiverr />
+		<div class="card-caption">Comission</div>
+	</a>
+</div>
 
-<div class="separator">
-	<div class="separator__title">Or hear back from me</div>
+<div class="separator container">
+	<div class="separator__title">Or hear back from me <Nojs /></div>
 	<div class="separator__subtitle">by verifying your email</div>
 </div>
 
-<form>
+<form class="container">
 	<label for="email" id="email-label"> Email </label>
 	<input type="email" name="email" id="email" placeholder="kat@mail.com" />
 	<label for="text" id="text-label"> Message </label>
@@ -148,6 +155,7 @@
 		background-color: var(--bg2);
 		border-radius: 12px;
 		margin-bottom: 1rem;
+		width: 100%;
 	}
 
 	input,
