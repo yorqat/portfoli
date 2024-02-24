@@ -8,7 +8,7 @@
 <div id="viewport">
 	<SkipNav />
 	<Nav />
-	<main id="content" class="container">
+	<main id="content">
 		{@render children()}
 	</main>
 	<Footer />
@@ -19,64 +19,36 @@
 		box-sizing: border-box;
 	}
 
-	:global(html) {
-		scroll-behavior: smooth;
-	}
-
 	#viewport {
 		height: 100svh;
-
-		display: grid;
-		grid-template-columns: minmax(0px, 1fr) 1120px minmax(0px, 1fr);
-		grid-template-rows: minmax(0px, max-content) 1fr minmax(0, max-content);
-		grid-column-gap: 20px;
-		grid-row-gap: 0px;
+		display: flex;
+		flex-direction: column;
 	}
 
 	#content {
 		overflow-y: scroll;
+		scroll-behavior: smooth;
 		position: relative;
-		grid-area: 2 / 1 / 3 / 4;
+		height: 100%;
 	}
 
-	:global(:root) {
-		--bg: #f0f0f0;
-		--bg2: #fbfbfb;
-
-		--clr: #5d5d5d;
-		--clr2: rgb(12, 12, 12);
-		--header-bg: #002d62;
-	}
-
-	:global(body) {
+	#viewport {
 		background-color: var(--bg);
 		color: var(--clr);
 	}
 
-	@media (prefers-color-scheme: dark) {
-		:global(:root) {
-			--bg: #141822;
-			--bg: #11131a;
-			--bg2: rgb(12, 12, 12);
-			--clr: #c1c1c1;
-			--clr2: #fff;
-			--header-bg: #002d62;
-		}
-	}
-
 	:global(.container) {
 		margin-inline: auto;
-		padding-inline: 1rem;
 	}
 
 	/* 2xs */
 	@media (min-width: 200px) {
 		#viewport {
-			grid-template-columns: 0 1fr 0;
 		}
 
 		:global(.container) {
 			width: 100%;
+			padding-inline: 1.5rem;
 			/* border: 2px purple solid; */
 		}
 
@@ -113,7 +85,6 @@
 	/* md */
 	@media (min-width: 768px) {
 		:global(.container) {
-			max-width: 768px;
 			/* border: 2px green solid; */
 			/* width: 768px; */
 		}
@@ -122,6 +93,7 @@
 	/* lg */
 	@media (min-width: 1024px) {
 		:global(.container) {
+			max-width: 768px;
 			/* width: 1024px; */
 			/* border: 2px yellow solid; */
 		}
@@ -130,7 +102,7 @@
 	/* xl */
 	@media (min-width: 1280px) {
 		:global(.container) {
-			max-width: 1120px;
+			/* max-width: 1120px; */
 			/* width: 1280px; */
 			/* border: 2px orange solid; */
 		}

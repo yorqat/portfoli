@@ -223,8 +223,6 @@
 
 		font-size: 2.5rem;
 		font-weight: 700;
-		grid-area: 1 / 1 / 3 / 2;
-		font-family: 'Gugi', sans-serif;
 	}
 
 	a {

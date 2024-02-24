@@ -33,7 +33,6 @@
 		font-family: sans-serif;
 		padding: 1rem;
 		background-color: var(--bg2);
-		grid-area: 3 / 1 / 4 / 4;
 	}
 
 	a {
