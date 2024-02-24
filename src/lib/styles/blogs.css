@@ -84,7 +84,7 @@ a.chapter-link {
 }
 
 h1.section-title {
-	font-size: 3rem;
+	font-size: clamp(2.4rem, 5vw, 3rem);
 }
 
 h2.section-title {
@@ -98,8 +98,8 @@ h2.section-title {
 
 .section {
 	font-family: 'Arvo', serif;
-	font-size: 1.1rem;
-	line-height: 1.85;
+	font-size: 1rem;
+	line-height: 2;
 }
 
 .section-note {
