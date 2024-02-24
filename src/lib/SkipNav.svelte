@@ -1,3 +1,7 @@
+<script>
+	import '$lib/fonts/Afacad-Variable.css';
+</script>
+
 <a href="#content">Skip to main content</a>
 
 <style>
@@ -8,8 +12,10 @@
 		margin: 0.25rem;
 		background-color: var(--bg);
 		color: white;
-		font-family: sans-serif;
+		font-size: 1.2rem;
+		font-family: 'Afacad-Variable700', sans-serif;
 		font-weight: 800;
+		text-decoration: none;
 		text-transform: uppercase;
 		transform: translateY(-200%);
 		transition: transform 200ms;
