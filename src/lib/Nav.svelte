@@ -1,6 +1,52 @@
 <script lang="ts">
 	import '$lib/fonts/Afacad-Variable.css';
 	import '$lib/fonts/Gugi.css';
+	import Nojs from '$lib/svg/Nojs.svelte';
+	import ToggleSystemCheckbox from '$lib/ToggleSystemCheckbox.svelte';
+	import German from './svg/German.svelte';
+
+	type CheckState = 'true' | 'false' | 'mixed';
+
+	const reduced_motion = (check_state: CheckState) => {
+		let viewport = document.getElementById('viewport');
+		const item = 'force-reduced-motion';
+		const data = `data-${item}`;
+
+		switch (check_state) {
+			case 'true':
+				viewport?.setAttribute(data, 'reduce');
+				localStorage.setItem(item, 'reduce');
+				break;
+			case 'false':
+				viewport?.setAttribute(data, 'no-reduce');
+				localStorage.setItem(item, 'no-reduce');
+				break;
+			case 'mixed':
+				viewport?.removeAttribute(data);
+				localStorage.removeItem(item);
+				break;
+		}
+	};
+
+	const dark = (check_state: CheckState) => {
+		let viewport = document.getElementById('viewport');
+		const item = 'force-dark-theme';
+		const data = `data-${item}`;
+		switch (check_state) {
+			case 'true':
+				viewport?.setAttribute(data, 'dark');
+				localStorage.setItem(item, 'dark');
+				break;
+			case 'false':
+				viewport?.setAttribute(data, 'light');
+				localStorage.setItem(item, 'light');
+				break;
+			case 'mixed':
+				viewport?.removeAttribute(data);
+				localStorage.removeItem(item);
+				break;
+		}
+	};
 </script>
 
 <header>
@@ -10,23 +56,22 @@
 
 			<input aria-label="a11y-toggle" type="checkbox" name="a11y" id="a11y" />
 
-			<div id="a11y-ctx-menu">
-				<div class="a11y-ctx-menu__title">Preferences</div>
+			<aside id="a11y-ctx-menu">
+				<div class="a11y-ctx-menu__title">Preferences <Nojs /></div>
+
 				<div class="a11y-ctx-menu__item">
-					<label for="reduced-motion"> reduced-motion </label>
-					<input type="checkbox" name="reduced-motion" id="reduced-motion" />
+					<ToggleSystemCheckbox logic={dark} label="dark" />
 				</div>
 
 				<div class="a11y-ctx-menu__item">
-					<label for="theme-switch"> theme </label>
-					<input type="checkbox" name="theme-switch" id="theme-switch" />
+					<ToggleSystemCheckbox logic={reduced_motion} label="reduced-motion" />
 				</div>
 
 				<div class="a11y-ctx-menu__item">
-					<label for="lang-switch"> language </label>
-					<input type="checkbox" name="lang-switch" id="lang-switch" />
+					<German label="Language" />
+					<!-- <ToggleSystemCheckbox /> -->
 				</div>
-			</div>
+			</aside>
 		</div>
 
 		<input aria-label="nav-toggle" type="checkbox" id="nav-toggle" checked />
@@ -36,6 +81,7 @@
 			<a class="nav-route" href="/gallery">Art</a>
 			<a class="nav-route" href="/mockeries">Web</a>
 			<a class="nav-route" href="/reach-out">Contact</a>
+			<a class="nav-route" href="/info">About</a>
 		</nav>
 	</div>
 </header>
@@ -46,19 +92,23 @@
 		-moz-appearance: none;
 		-o-appearance: none;
 		appearance: none;
-		transition: transform 300ms ease-out;
+	}
 
-		&:focus-visible {
-			outline: medium auto currentColor;
-			outline: medium auto invert;
-			outline: 5px auto -webkit-focus-ring-color;
-		}
+	@mixin grow {
+		transition: transform 300ms ease-out;
 
 		&:focus,
 		&:hover::after,
 		&:hover {
 			transform: scale(1.1);
 		}
+	}
+
+	.indicator {
+		background-color: var(--bg2);
+		aspect-ratio: 1;
+		width: 1rem;
+		border-radius: 50%;
 	}
 
 	#nav-toggle-label {
@@ -70,15 +120,19 @@
 		position: absolute;
 		top: 2rem;
 		margin-left: 1rem;
+		aspect-ratio: 1;
+		height: 1.5rem;
 
 		&::after {
 			position: absolute;
 			background-color: white;
 			color: var(--header-bg);
-			box-shadow:  inset 0px 0px 5px 0px rgba(138, 138, 138, 1);
+			box-shadow: inset 0px 0px 5px 0px rgba(138, 138, 138, 1);
+			font-family: 'Noto', sans-serif;
 			content: '↷';
-			font-size: 1.6rem;
-			transition: transform 200ms;
+			font-size: 1.1rem;
+			font-weight: 800;
+			transition: transform 200ms ease-in-out;
 			height: 1.5rem;
 			border-radius: 50%;
 			aspect-ratio: 1;
@@ -89,36 +143,50 @@
 		}
 	}
 
+	@keyframes drop {
+		from {
+			top: 5rem;
+		}
+
+		to {
+			top: 6rem;
+		}
+	}
+
 	#a11y-ctx-menu {
 		display: none;
 		position: absolute;
 
 		background-color: var(--bg2);
-		color: var(--clr);
-		margin-top: 2rem;
+		top: 6rem;
+		animation: drop 200ms forwards;
 		padding: 1.6rem 2rem;
-		border-radius: 12px;
-		box-shadow: 0px 0px 5px 0px rgba(138, 138, 138, 1);
-		font-family: 'Afacad-Variable400', sans-serif;
+		border-radius: 16px;
+		box-shadow: var(--shadow1);
 		font-size: 1.2rem;
 
 		.a11y-ctx-menu__title {
 			color: var(--clr2);
 			font-size: 2rem;
-			margin-bottom: 1.6rem;
-			font-family: 'Afacad-Variable700', sans-serif;
+			margin-bottom: 1rem;
+
+			display: flex;
+			justify-content: space-between;
 		}
 
 		.a11y-ctx-menu__item {
+			color: var(--clr2);
 			display: flex;
-			gap: 2rem;
 			justify-content: space-between;
+			align-items: center;
 			cursor: pointer;
 		}
 	}
 
 	#a11y:checked ~ #a11y-ctx-menu {
-		display: block;
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
 		z-index: 2;
 
 		label {
@@ -143,6 +211,8 @@
 		grid-area: 1 / 1 / 2 / 4;
 		background-color: var(--header-bg);
 		color: white;
+		position: relative;
+		font-family: 'Afacad-Variable400', sans-serif;
 	}
 
 	.container {
@@ -253,8 +323,8 @@
 			padding-block: 0rem;
 
 			> .nav-route {
-				font-size: 1.2rem;
-				font-weight: 300;
+				font-size: 1.3rem;
+				letter-spacing: 1px;
 			}
 		}
 
