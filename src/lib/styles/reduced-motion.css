@@ -1,0 +1,11 @@
+#viewport[data-force-reduced-motion='reduce'] * {
+	animation-timing-function: steps(1, start) !important;
+	transition-timing-function: steps(1, start) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	#viewport:not([data-force-reduced-motion='no-reduce']) * {
+		animation-timing-function: steps(1, start) !important;
+		transition-timing-function: steps(1, start) !important;
+	}
+}

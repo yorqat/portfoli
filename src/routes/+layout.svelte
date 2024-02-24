@@ -3,6 +3,9 @@
 	import Nav from '$lib/Nav.svelte';
 	import Footer from '$lib/Footer.svelte';
 	import SkipNav from '$lib/SkipNav.svelte';
+
+	import '$lib/styles/reduced-motion.css';
+	import '$lib/styles/theme.css';
 </script>
 
 <div id="viewport">
