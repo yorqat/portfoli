@@ -5,7 +5,39 @@
 	import ToggleSystemCheckbox from '$lib/ToggleSystemCheckbox.svelte';
 	import German from './svg/German.svelte';
 
+	// TODO: Make this DRY
 	type CheckState = 'true' | 'false' | 'mixed';
+
+	let reducedMotionInit: CheckState = $state('mixed');
+	let darkInit: CheckState = $state('mixed');
+
+	$effect(() => {
+		let reducedMotion = localStorage.getItem('force-reduced-motion');
+		if (reducedMotion) {
+			switch (reducedMotion) {
+				case 'reduce':
+					reducedMotionInit = 'true';
+					break;
+				case 'no-reduce':
+					reducedMotionInit = 'false';
+					break;
+			}
+			reduced_motion(reducedMotionInit);
+		}
+
+		let darkTheme = localStorage.getItem('force-dark-theme');
+		if (darkTheme) {
+			switch (darkTheme) {
+				case 'dark':
+					darkInit = 'true';
+					break;
+				case 'light':
+					darkInit = 'false';
+					break;
+			}
+			dark(darkInit);
+		}
+	});
 
 	const reduced_motion = (check_state: CheckState) => {
 		let viewport = document.getElementById('viewport');
@@ -60,11 +92,15 @@
 				<div class="a11y-ctx-menu__title">Preferences <Nojs /></div>
 
 				<div class="a11y-ctx-menu__item">
-					<ToggleSystemCheckbox logic={dark} label="dark" />
+					<ToggleSystemCheckbox checked={darkInit} logic={dark} label="dark" />
 				</div>
 
 				<div class="a11y-ctx-menu__item">
-					<ToggleSystemCheckbox logic={reduced_motion} label="reduced-motion" />
+					<ToggleSystemCheckbox
+						checked={reducedMotionInit}
+						logic={reduced_motion}
+						label="reduced-motion"
+					/>
 				</div>
 
 				<div class="a11y-ctx-menu__item">
