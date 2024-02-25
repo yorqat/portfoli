@@ -22,9 +22,9 @@
 
 <form class="container unpad">
 	<label for="email" id="email-label"> Email </label>
-	<input type="email" name="email" id="email" placeholder="kat@mail.com" />
+	<input type="email" name="email" id="email" placeholder="bestboss@mail.com" />
 	<label for="text" id="text-label"> Message </label>
-	<textarea name="text" id="text" placeholder="tell me what you need..."></textarea>
+	<textarea name="text" id="text" placeholder="Love your work! We need someone like you in my team."></textarea>
 	<button type="submit">
 		<span class="submit-label"> Send </span>
 	</button>
