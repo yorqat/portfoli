@@ -55,6 +55,10 @@
 			/* border: 2px purple solid; */
 		}
 
+		:global(.unpad) {
+			padding-inline: 0;
+		}
+
 		:global(.img) {
 			width: 100%;
 			padding-block: 0.5rem;
