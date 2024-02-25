@@ -1,10 +1,14 @@
-#viewport[data-force-reduced-motion='reduce'] * {
+#viewport[data-force-reduced-motion='reduce'] *,
+#viewport[data-force-reduced-motion='reduce'] *::before,
+#viewport[data-force-reduced-motion='reduce'] *::after {
 	animation-timing-function: steps(1, start) !important;
 	transition-timing-function: steps(1, start) !important;
 }
 
 @media (prefers-reduced-motion: reduce) {
-	#viewport:not([data-force-reduced-motion='no-reduce']) * {
+	#viewport:not([data-force-reduced-motion='no-reduce']) *,
+	#viewport:not([data-force-reduced-motion='no-reduce']) *::before,
+	#viewport:not([data-force-reduced-motion='no-reduce']) *::after {
 		animation-timing-function: steps(1, start) !important;
 		transition-timing-function: steps(1, start) !important;
 	}
