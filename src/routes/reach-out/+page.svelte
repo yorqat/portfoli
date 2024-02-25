@@ -24,7 +24,7 @@
 	<label for="email" id="email-label"> Email </label>
 	<input type="email" name="email" id="email" placeholder="bestboss@mail.com" />
 	<label for="text" id="text-label"> Message </label>
-	<textarea name="text" id="text" placeholder="Love your work! We need someone like you in my team."
+	<textarea name="text" id="text" placeholder="Love your work! We need your skills in our team."
 	></textarea>
 	<button type="submit">
 		<span class="submit-label"> Send </span>
