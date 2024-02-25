@@ -16,37 +16,11 @@
 />
 
 <div class="separator container">
-	<div class="separator__title">Reach instantly</div>
-	<div class="separator__subtitle">through these platforms</div>
-</div>
-
-<div class="container">
-	<a href="mailto:dev.yorqat@gmail.com" target="_blank" class="container">
-		<Email />
-		<div class="card-caption">Compose</div>
-	</a>
-
-	<a href="https://www.linkedin.com/in/aurora-paisley-7aba962b2/" target="_blank" class="container">
-		<Linkedin />
-		<div class="card-caption">Connect</div>
-	</a>
-
-	<a
-		href="https://www.fiverr.com/aurorapaisley/create-your-unique-and-selling-website"
-		target="_blank"
-		class="container"
-	>
-		<Fiverr />
-		<div class="card-caption">Comission</div>
-	</a>
-</div>
-
-<div class="separator container">
-	<div class="separator__title">Or hear back from me <Nojs /></div>
+	<div class="separator__title">Hear back from me <Nojs /></div>
 	<div class="separator__subtitle">by verifying your email</div>
 </div>
 
-<form class="container">
+<form class="container unpad">
 	<label for="email" id="email-label"> Email </label>
 	<input type="email" name="email" id="email" placeholder="kat@mail.com" />
 	<label for="text" id="text-label"> Message </label>
@@ -55,6 +29,31 @@
 		<span class="submit-label"> Send </span>
 	</button>
 </form>
+
+<div class="separator container">
+	<div class="separator__title">Or reach instantly</div>
+	<div class="separator__subtitle">through these platforms</div>
+</div>
+
+<div class="container">
+	<a href="mailto:dev.yorqat@gmail.com" target="_blank">
+		<Email />
+		<div class="card-caption">Compose</div>
+	</a>
+
+	<a href="https://www.linkedin.com/in/aurora-paisley-7aba962b2/" target="_blank">
+		<Linkedin />
+		<div class="card-caption">Connect</div>
+	</a>
+
+	<a
+		href="https://www.fiverr.com/aurorapaisley/create-your-unique-and-selling-website"
+		target="_blank"
+	>
+		<Fiverr />
+		<div class="card-caption">Comission</div>
+	</a>
+</div>
 
 <style>
 	* {
@@ -94,10 +93,13 @@
 
 	#email-label {
 		grid-area: 1 / 1 / 2 / 2;
+		border-right: 1px solid var(--clr);
 	}
 
 	#text-label {
 		grid-area: 2 / 1 / 3 / 3;
+		border-top: 1px solid var(--clr);
+		border-bottom: 1px solid var(--clr);
 	}
 
 	#text {
@@ -147,24 +149,23 @@
 	}
 
 	form {
+		color: var(--clr2);
+		background-color: var(--bg2);
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: 1fr 1fr auto auto;
 
-		color: var(--clr);
-		background-color: var(--bg2);
 		border-radius: 12px;
+		overflow: hidden;
 		margin-bottom: 1rem;
 		width: 100%;
 	}
 
 	input,
+	input:-webkit-autofill,
 	textarea {
-		border-radius: 0;
-		border: 4px solid var(--bg2);
-		border-bottom: unset;
-		background-color: var(--bg);
-		color: var(--clr);
+		border: unset;
+		background-color: var(--bg2);
 		color: var(--clr2);
 		padding-left: 2rem;
 		font-family: 'Supreme-Light', sans-serif;
