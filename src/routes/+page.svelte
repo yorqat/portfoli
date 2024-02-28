@@ -13,7 +13,7 @@
 
 <style lang="scss">
 	.hero {
-		font-family: 'Supreme-Light', sans-serif;
+		font-family: sans-serif;
 	}
 
 	section {

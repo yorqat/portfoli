@@ -164,7 +164,7 @@
 			background-color: white;
 			color: var(--header-bg);
 			box-shadow: inset 0px 0px 5px 0px rgba(138, 138, 138, 1);
-			font-family: 'Noto', sans-serif;
+			font-family: sans-serif;
 			content: '↷';
 			font-size: 1.1rem;
 			font-weight: 800;
@@ -245,10 +245,10 @@
 
 	header {
 		grid-area: 1 / 1 / 2 / 4;
-		background-color: var(--header-bg);
-		color: white;
+		// background-color: var(--header-bg);
+		// color: white;
 		position: relative;
-		font-family: 'Afacad-Variable400', sans-serif;
+		font-family: sans-serif;
 	}
 
 	.container {
@@ -267,8 +267,7 @@
 		align-items: center;
 		font-size: 2rem;
 		font-weight: 400;
-		font-family: 'Gugi', sans-serif;
-		font-family: 'Afacad-Variable400', sans-serif;
+		font-family: sans-serif;
 
 		text-align: center;
 		flex-direction: column;
@@ -303,7 +302,7 @@
 		}
 
 		&::after {
-			font-family: 'Afacad-Variable700', sans-serif;
+			font-family: sans-serif;
 			content: 'X';
 			// font-weight: ;
 			font-size: 1.8rem;

@@ -58,8 +58,7 @@
 
 <style>
 	* {
-		font-family: 'Gugi', sans-serif;
-		font-family: 'HammersmithOne', sans-serif;
+		font-family: sans-serif;
 	}
 
 	button {
@@ -76,7 +75,7 @@
 		font-size: 2rem;
 		line-height: 100%;
 		color: var(--clr2);
-		font-family: 'Supreme-Light', sans-serif;
+		font-family: sans-serif;
 	}
 
 	.separator__subtitle {
@@ -169,7 +168,7 @@
 		background-color: var(--bg2);
 		color: var(--clr2);
 		padding-left: 2rem;
-		font-family: 'Supreme-Light', sans-serif;
+		font-family: sans-serif;
 	}
 
 	a {

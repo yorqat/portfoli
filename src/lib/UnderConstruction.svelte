@@ -21,15 +21,7 @@
 	/* @import url('$lib/fonts/Montserrat:wght@100'); */
 
 	h1 {
-		font-family:
-			'Montserrat',
-			-apple-system,
-			BlinkMacSystemFont,
-			'Segoe UI',
-			Roboto,
-			Helvetica,
-			Arial,
-			sans-serif;
+		font-family: sans-serif;
 		color: #797979;
 		text-align: center;
 	}

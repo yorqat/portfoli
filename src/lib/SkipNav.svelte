@@ -13,7 +13,7 @@
 		background-color: var(--bg);
 		color: white;
 		font-size: 1.2rem;
-		font-family: 'Afacad-Variable700', sans-serif;
+		font-family: sans-serif;
 		font-weight: 800;
 		text-decoration: none;
 		text-transform: uppercase;
