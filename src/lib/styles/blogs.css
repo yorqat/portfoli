@@ -22,7 +22,7 @@ a {
 
 table.chapters {
 	text-align: left;
-	font-family: 'Cabin-Variable', sans-serif;
+	font-family: sans-serif;
 	width: 100%;
 	border-collapse: collapse;
 }
@@ -38,7 +38,7 @@ table.chapters th {
 }
 
 .chapterNo {
-	font-family: 'Fira Code', monospace;
+	font-family: monospace;
 	font-weight: 500;
 }
 
@@ -92,12 +92,13 @@ h2.section-title {
 }
 
 .section-title {
-	font-family: 'Cabin-Variable', sans-serif;
+	font-family: sans-serif;
 	color: var(--clr2);
+	line-height: 121%;
 }
 
 .section {
-	font-family: 'Arvo', serif;
+	font-family: serif;
 	font-size: 1rem;
 	line-height: 2;
 }
@@ -135,7 +136,7 @@ h2.section-title {
 
 .section-code {
 	margin-top: 2rem;
-	font-family: 'Fira Code', monospace;
+	font-family: monospace;
 	padding: 0.8rem;
 	-webkit-box-shadow: inset 0px 0px 5px 0px rgba(138, 138, 138, 1);
 	-moz-box-shadow: inset 0px 0px 5px 0px rgba(138, 138, 138, 1);
@@ -154,7 +155,7 @@ h2.section-title {
 }
 
 a.blog-card-item-container {
-	font-family: 'Cabin-Variable', sans-serif;
+	font-family: sans-serif;
 	background-color: var(--bg2);
 	border-radius: 12px;
 
@@ -192,7 +193,7 @@ a.blog-card-item-container {
 	background-color: var(--bg2);
 	padding: 0.4rem;
 
-	font-family: 'Arvo', serif;
+	font-family: serif;
 	box-shadow:
 		var(--clr) 0px 1px 3px -1px,
 		var(--clr) 0px 1px 3px -1px;
