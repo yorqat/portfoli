@@ -84,7 +84,7 @@
 <header>
 	<div class="container">
 		<div>
-			<a class="logo" href="/"> yQ </a>
+			<a class="logo" href="/"> YQ </a>
 
 			<input aria-label="a11y-toggle" type="checkbox" name="a11y" id="a11y" />
 
@@ -105,7 +105,6 @@
 
 				<div class="a11y-ctx-menu__item">
 					<German label="Language" />
-					<!-- <ToggleSystemCheckbox /> -->
 				</div>
 			</aside>
 		</div>
