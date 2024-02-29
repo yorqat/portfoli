@@ -81,7 +81,7 @@
 	};
 </script>
 
-<header>
+<header id="header">
 	<div class="container">
 		<div>
 			<a class="logo" href="/"> YQ </a>
