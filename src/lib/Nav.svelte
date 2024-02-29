@@ -113,10 +113,8 @@
 
 		<nav id="nav">
 			<a class="nav-route" href="/blogs">Blogs</a>
-			<a class="nav-route" href="/gallery">Art</a>
-			<a class="nav-route" href="/mockeries">Web</a>
-			<a class="nav-route" href="/reach-out">Contact</a>
-			<a class="nav-route" href="/info">About</a>
+			<a class="nav-route" href="/mockeries">Work</a>
+			<a class="nav-route" href="/reach-out">Reach</a>
 		</nav>
 	</div>
 </header>
