@@ -109,8 +109,6 @@
 	/* xl */
 	@media (min-width: 1280px) {
 		:global(.container) {
-			/* max-width: 1120px; */
-			max-width: 80vw;
 			/* width: 1280px; */
 			/* border: 2px orange solid; */
 		}
@@ -119,6 +117,7 @@
 	/* 2xl */
 	@media (min-width: 1536px) {
 		:global(.container) {
+			max-width: 1120px;
 			/* border: 2px red solid; */
 		}
 	}
