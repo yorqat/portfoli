@@ -126,6 +126,7 @@
 		-o-appearance: none;
 		appearance: none;
 	}
+	@import url('https://fonts.googleapis.com/css2?family=Archivo&family=Urbanist:wght@100&display=swap');
 
 	@mixin grow {
 		transition: transform 300ms ease-out;
@@ -241,11 +242,9 @@
 	}
 
 	header {
-		grid-area: 1 / 1 / 2 / 4;
-		// background-color: var(--header-bg);
-		// color: white;
 		position: relative;
-		font-family: sans-serif;
+		font-family: 'Archivo', sans-serif;
+		background: var(--header-bg);
 	}
 
 	.container {
@@ -264,11 +263,10 @@
 		align-items: center;
 		font-size: 2rem;
 		font-weight: 400;
-		font-family: sans-serif;
 
 		text-align: center;
 		flex-direction: column;
-		justify-content: space-around;
+		justify-content: space-between;
 		flex: 0 0 100%;
 		gap: 4rem;
 		margin-block: 1rem;
@@ -323,8 +321,9 @@
 	.logo {
 		@include no-appearance();
 
-		font-size: 2.5rem;
+		font-size: 3rem;
 		font-weight: 700;
+		font-family: 'Urbanist', sans-serif;
 	}
 
 	a {
@@ -347,15 +346,15 @@
 		#nav {
 			display: flex;
 			flex: 1 0 auto;
-			grid-area: 1 / 2 / 3 / 3;
+			grid-area: 1 / 3 / 3 / 3;
 
-			justify-content: center;
+			justify-content: flex-end;
 			background-color: transparent;
 			margin-block: 0rem;
 			padding-block: 0rem;
 
 			> .nav-route {
-				font-size: 1.3rem;
+				font-size: 1.5rem;
 				letter-spacing: 1px;
 			}
 		}
@@ -370,7 +369,7 @@
 
 			&:checked ~ #nav,
 			~ #nav {
-				gap: 2rem;
+				gap: 5rem;
 				display: flex;
 				flex-direction: row;
 			}
