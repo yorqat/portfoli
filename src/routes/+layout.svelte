@@ -100,7 +100,7 @@
 	/* lg */
 	@media (min-width: 1024px) {
 		:global(.container) {
-			max-width: 768px;
+			/* max-width: 768px; */
 			/* width: 1024px; */
 			/* border: 2px yellow solid; */
 		}
@@ -110,6 +110,7 @@
 	@media (min-width: 1280px) {
 		:global(.container) {
 			/* max-width: 1120px; */
+			max-width: 80vw;
 			/* width: 1280px; */
 			/* border: 2px orange solid; */
 		}
