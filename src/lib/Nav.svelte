@@ -323,9 +323,8 @@
 		}
 
 		&:checked::after {
-			content: '≡';
+			content: '=';
 			rotate: 180deg;
-			font-size: 2rem;
 		}
 	}
 
