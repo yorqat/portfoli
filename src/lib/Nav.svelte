@@ -299,6 +299,8 @@
 		cursor: pointer;
 		position: relative;
 		grid-area: 1 / 3 / 3 / 4;
+		display: flex;
+		place-items: center;
 
 		&:hover {
 			filter: brightness(0.8);
@@ -307,13 +309,13 @@
 
 		&::after {
 			font-family: sans-serif;
-			content: 'X';
+			content: 'x';
 			// font-weight: ;
 			font-size: 1.8rem;
 			position: absolute;
 			color: white;
 
-			transition: rotate 200ms ease-in-out;
+			transition: rotate 100ms linear;
 		}
 
 		&:checked ~ #nav {
