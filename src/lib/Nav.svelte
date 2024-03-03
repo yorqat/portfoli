@@ -5,7 +5,7 @@
 	import ToggleSystemCheckbox from '$lib/ToggleSystemCheckbox.svelte';
 	import German from './svg/German.svelte';
 
-	// TODO: Make this DRY
+	// Logic to grab state from local storage
 	type CheckState = 'true' | 'false' | 'mixed';
 
 	let reducedMotionInit: CheckState = $state('mixed');
@@ -22,7 +22,8 @@
 					reducedMotionInit = 'false';
 					break;
 			}
-			reduced_motion(reducedMotionInit);
+
+			reducedMotionUpdate(reducedMotionInit);
 		}
 
 		let darkTheme = localStorage.getItem('force-dark-theme');
@@ -35,49 +36,57 @@
 					darkInit = 'false';
 					break;
 			}
+
 			dark(darkInit);
 		}
 	});
 
-	const reduced_motion = (check_state: CheckState) => {
-		let viewport = document.getElementById('viewport');
+	// update viewport reduced motion based on current state
+	const reducedMotionUpdate = (check_state: CheckState) => {
 		const item = 'force-reduced-motion';
-		const data = `data-${item}`;
 
 		switch (check_state) {
 			case 'true':
-				viewport?.setAttribute(data, 'reduce');
-				localStorage.setItem(item, 'reduce');
+				setAttrAndLocalStorage(item, 'reduce');
 				break;
 			case 'false':
-				viewport?.setAttribute(data, 'no-reduce');
-				localStorage.setItem(item, 'no-reduce');
+				setAttrAndLocalStorage(item, 'no-reduce');
 				break;
 			case 'mixed':
-				viewport?.removeAttribute(data);
-				localStorage.removeItem(item);
+				removeAttrAndLocalStorage(item);
 				break;
 		}
 	};
 
+	// update viewport dark theme based on current state
 	const dark = (check_state: CheckState) => {
-		let viewport = document.getElementById('viewport');
 		const item = 'force-dark-theme';
-		const data = `data-${item}`;
+
 		switch (check_state) {
 			case 'true':
-				viewport?.setAttribute(data, 'dark');
-				localStorage.setItem(item, 'dark');
+				setAttrAndLocalStorage(item, 'dark');
 				break;
 			case 'false':
-				viewport?.setAttribute(data, 'light');
-				localStorage.setItem(item, 'light');
+				setAttrAndLocalStorage(item, 'light');
 				break;
 			case 'mixed':
-				viewport?.removeAttribute(data);
-				localStorage.removeItem(item);
+				removeAttrAndLocalStorage(item);
 				break;
 		}
+	};
+
+	const setAttrAndLocalStorage = (item: string, value: string) => {
+		let viewport = document.getElementById('viewport');
+
+		viewport?.setAttribute(`data-${item}`, value);
+		localStorage.setItem(item, value);
+	};
+
+	const removeAttrAndLocalStorage = (item: string) => {
+		let viewport = document.getElementById('viewport');
+
+		viewport?.removeAttribute(`data-${item}`);
+		localStorage.removeItem(item);
 	};
 </script>
 
@@ -98,7 +107,7 @@
 				<div class="a11y-ctx-menu__item">
 					<ToggleSystemCheckbox
 						checked={reducedMotionInit}
-						logic={reduced_motion}
+						logic={reducedMotionUpdate}
 						label="reduced-motion"
 					/>
 				</div>
