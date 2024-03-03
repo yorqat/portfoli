@@ -38,6 +38,7 @@
 	#viewport {
 		background-color: var(--bg);
 		color: var(--clr);
+		color-scheme: var(--clr-scheme);
 	}
 
 	:global(.container) {
