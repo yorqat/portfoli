@@ -168,21 +168,23 @@
 
 		&::after {
 			position: absolute;
-			background-color: white;
+			background-color: var(--clr2);
 			color: var(--header-bg);
-			box-shadow: inset 0px 0px 5px 0px rgba(138, 138, 138, 1);
 			font-family: sans-serif;
 			content: '↷';
 			font-size: 1.1rem;
 			font-weight: 800;
-			transition: transform 200ms ease-in-out;
+			transition:
+				scale 400ms,
+				rotate 800ms;
 			height: 1.5rem;
 			border-radius: 50%;
 			aspect-ratio: 1;
 		}
 
 		&:checked::after {
-			transform: scaleY(-1) rotate(90deg);
+			rotate: -100deg 0;
+			scale: 1 -1;
 		}
 	}
 
