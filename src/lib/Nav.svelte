@@ -297,7 +297,7 @@
 	#nav-toggle {
 		@include no-appearance();
 
-		padding-inline: 1rem;
+		padding-inline: 1.75rem;
 		cursor: pointer;
 		position: relative;
 		grid-area: 1 / 3 / 3 / 4;
