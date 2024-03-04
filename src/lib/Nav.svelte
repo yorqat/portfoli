@@ -312,12 +312,16 @@
 		&::after {
 			font-family: sans-serif;
 			content: 'x';
-			// font-weight: ;
-			font-size: 1.8rem;
+			font-size: 2.2rem;
 			position: absolute;
 			color: white;
 
-			transition: rotate 100ms linear;
+			transform-origin: center;
+			scale: 0.8 0.9;
+			rotate: -90deg;
+			transition: 
+				scale 300ms,
+				rotate 200ms ease-out;
 		}
 
 		&:checked ~ #nav {
@@ -325,8 +329,9 @@
 		}
 
 		&:checked::after {
+			scale: 1;
+			rotate: 0deg;
 			content: '=';
-			rotate: 180deg;
 		}
 	}
 
