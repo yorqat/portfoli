@@ -183,7 +183,7 @@
 		}
 
 		&:checked::after {
-			rotate: -100deg 0;
+			rotate: -90deg;
 			scale: 1 -1;
 		}
 	}
