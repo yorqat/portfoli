@@ -1,107 +1,40 @@
 <script lang="ts">
-	import '$lib/fonts/Afacad-Variable.css';
-	import '$lib/fonts/Gugi.css';
 	import Nojs from '$lib/svg/Nojs.svelte';
 	import ToggleSystemCheckbox from '$lib/ToggleSystemCheckbox.svelte';
+	import { darkThemeUpdate, reducedMotionUpdate } from '$lib/a11y';
+
 	import German from './svg/German.svelte';
 
-	// Logic to grab state from local storage
-	type CheckState = 'true' | 'false' | 'mixed';
+	interface NavProps {
+		darkInit: string;
+		reducedMotionInit: string;
+	}
 
-	let reducedMotionInit: CheckState = $state('mixed');
-	let darkInit: CheckState = $state('mixed');
+	let { darkInit, reducedMotionInit } = $props<NavProps>();
 
-	$effect(() => {
-		let reducedMotion = localStorage.getItem('force-reduced-motion');
-		if (reducedMotion) {
-			switch (reducedMotion) {
-				case 'reduce':
-					reducedMotionInit = 'true';
-					break;
-				case 'no-reduce':
-					reducedMotionInit = 'false';
-					break;
-			}
-
-			reducedMotionUpdate(reducedMotionInit);
-		}
-
-		let darkTheme = localStorage.getItem('force-dark-theme');
-		if (darkTheme) {
-			switch (darkTheme) {
-				case 'dark':
-					darkInit = 'true';
-					break;
-				case 'light':
-					darkInit = 'false';
-					break;
-			}
-
-			dark(darkInit);
-		}
-	});
-
-	// update viewport reduced motion based on current state
-	const reducedMotionUpdate = (check_state: CheckState) => {
-		const item = 'force-reduced-motion';
-
-		switch (check_state) {
-			case 'true':
-				setAttrAndLocalStorage(item, 'reduce');
-				break;
-			case 'false':
-				setAttrAndLocalStorage(item, 'no-reduce');
-				break;
-			case 'mixed':
-				removeAttrAndLocalStorage(item);
-				break;
-		}
-	};
-
-	// update viewport dark theme based on current state
-	const dark = (check_state: CheckState) => {
-		const item = 'force-dark-theme';
-
-		switch (check_state) {
-			case 'true':
-				setAttrAndLocalStorage(item, 'dark');
-				break;
-			case 'false':
-				setAttrAndLocalStorage(item, 'light');
-				break;
-			case 'mixed':
-				removeAttrAndLocalStorage(item);
-				break;
-		}
-	};
-
-	const setAttrAndLocalStorage = (item: string, value: string) => {
-		let viewport = document.getElementById('viewport');
-
-		viewport?.setAttribute(`data-${item}`, value);
-		localStorage.setItem(item, value);
-	};
-
-	const removeAttrAndLocalStorage = (item: string) => {
-		let viewport = document.getElementById('viewport');
-
-		viewport?.removeAttribute(`data-${item}`);
-		localStorage.removeItem(item);
-	};
+	import { setupViewTransition } from 'sveltekit-view-transition';
+	import { page } from '$app/stores';
+	const { transition } = setupViewTransition();
 </script>
 
 <header id="header">
 	<div class="container">
 		<div>
-			<a class="logo" href="/"> YQ </a>
+			<a use:transition={'logo'} class="logo" href="/"> YQ </a>
 
-			<input aria-label="a11y-toggle" type="checkbox" name="a11y" id="a11y" />
+			<input
+				aria-label="a11y-toggle"
+				type="checkbox"
+				name="a11y"
+				id="a11y"
+				use:transition={'a11y'}
+			/>
 
 			<aside id="a11y-ctx-menu">
 				<div class="a11y-ctx-menu__title">Preferences <Nojs /></div>
 
 				<div class="a11y-ctx-menu__item">
-					<ToggleSystemCheckbox checked={darkInit} logic={dark} label="dark" />
+					<ToggleSystemCheckbox checked={darkInit} logic={darkThemeUpdate} label="dark" />
 				</div>
 
 				<div class="a11y-ctx-menu__item">
@@ -121,9 +54,25 @@
 		<input aria-label="nav-toggle" type="checkbox" id="nav-toggle" checked />
 
 		<nav id="nav">
-			<a class="nav-route" href="/blogs">Blogs</a>
-			<a class="nav-route" href="/mockeries">Work</a>
-			<a class="nav-route" href="/reach-out">Reach</a>
+			<a
+				use:transition={'blogs'}
+				class="nav-route"
+				href="/blogs"
+				aria-current={$page.url.pathname.includes('/blogs') ? 'page' : undefined}>Blog</a
+			>
+			<a
+				use:transition={'work'}
+				class="nav-route"
+				href="/mockeries"
+				aria-current={$page.url.pathname.includes('/mockeries') ? 'page' : undefined}>Work</a
+			>
+			<a
+				use:transition={'reach'}
+				class="nav-route"
+				href="/reach-out"
+				aria-current={$page.url.pathname.includes('/reach-out') ? 'page' : undefined}>Reach</a
+			>
+			<div class="nav-active"></div>
 		</nav>
 	</div>
 </header>
@@ -135,7 +84,6 @@
 		-o-appearance: none;
 		appearance: none;
 	}
-	@import url('https://fonts.googleapis.com/css2?family=Archivo&family=Urbanist:wght@100&display=swap');
 
 	@mixin grow {
 		transition: transform 300ms ease-out;
@@ -161,7 +109,7 @@
 	#a11y {
 		@include no-appearance;
 		position: absolute;
-		top: 2rem;
+		top: 2.25rem;
 		margin-left: 1rem;
 		aspect-ratio: 1;
 		height: 1.5rem;
@@ -192,22 +140,19 @@
 		from {
 			top: 5rem;
 		}
-
-		to {
-			top: 6rem;
-		}
 	}
 
 	#a11y-ctx-menu {
 		display: none;
-		position: absolute;
+		position: fixed;
 
 		background-color: var(--bg2);
 		top: 6rem;
-		animation: drop 200ms forwards;
+		animation: drop 500ms forwards;
 		padding: 1.6rem 2rem;
 		border-radius: 16px;
-		box-shadow: var(--shadow-1);
+		border: 0.2px solid var(--clr);
+		// box-shadow: var(--shadow-1);
 		font-size: 1.2rem;
 
 		.a11y-ctx-menu__title {
@@ -231,7 +176,7 @@
 	#a11y:checked ~ #a11y-ctx-menu {
 		display: flex;
 		flex-direction: column;
-		gap: 0.5rem;
+		gap: 0.75rem;
 		z-index: 2;
 
 		label {
@@ -254,8 +199,10 @@
 
 	header {
 		position: relative;
-		font-family: 'Archivo', sans-serif;
-		background: var(--header-bg);
+		font-family: 'archivoregular', sans-serif;
+		background: var(--bg2);
+		box-shadow: var(--bg) 0px 20px 30px -10px;
+		transition: all 500ms;
 	}
 
 	.container {
@@ -280,8 +227,7 @@
 		justify-content: space-between;
 		flex: 0 0 100%;
 		gap: 4rem;
-		margin-block: 1rem;
-		padding-block: 3rem;
+		padding-top: 2rem;
 		grid-area: 3 / 2 / 3 / 3;
 
 		> .nav-route {
@@ -314,12 +260,12 @@
 			content: 'x';
 			font-size: 2.2rem;
 			position: absolute;
-			color: white;
+			color: var(--clr2);
 
 			transform-origin: center;
 			scale: 0.8 0.9;
 			rotate: -90deg;
-			transition: 
+			transition:
 				scale 300ms,
 				rotate 200ms ease-out;
 		}
@@ -339,8 +285,7 @@
 		@include no-appearance();
 
 		font-size: 3rem;
-		font-weight: 700;
-		font-family: 'Urbanist', sans-serif;
+		font-family: 'urbanistthin', sans-serif;
 	}
 
 	a {
@@ -369,10 +314,32 @@
 			background-color: transparent;
 			margin-block: 0rem;
 			padding-block: 0rem;
+			position: relative;
+
+			// .nav-active {
+			// 	position: absolute;
+			// 	height: 2px;
+			// 	width: 4rem;
+			// 	top: 4rem;
+			// 	// --left: -200px;
+			// 	left: var(--left);
+
+			// 	background-color: var(--clr2);
+			// }
 
 			> .nav-route {
+				color: var(--clr);
 				font-size: 1.5rem;
 				letter-spacing: 1px;
+				position: relative;
+
+				&[aria-current='page'] {
+					color: var(--clr2);
+				}
+
+				&:hover {
+					color: var(--clr2);
+				}
 			}
 		}
 

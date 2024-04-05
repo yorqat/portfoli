@@ -21,7 +21,7 @@
 	/* @import url('$lib/fonts/Montserrat:wght@100'); */
 
 	h1 {
-		font-family: sans-serif;
+		font-family: 'Urbanist-thin' sans-serif;
 		color: #797979;
 		text-align: center;
 	}

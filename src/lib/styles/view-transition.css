@@ -1,0 +1,62 @@
+/* Disable default crossfade. */
+:root {
+	view-transition-name: none;
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 1;
+	}
+
+	20% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes fadeOut {
+	to {
+		opacity: 0;
+	}
+}
+
+@keyframes slideInRight {
+	from {
+		left: -2rem;
+	}
+}
+
+@keyframes shrink {
+	to {
+		max-height: 0%;
+	}
+
+	from {
+		max-height: 5rem;
+	}
+}
+
+@keyframes expand {
+	from {
+		max-height: 0%;
+	}
+
+	to {
+		max-height: 5rem;
+	}
+}
+
+/* ::view-transition-old(*) {
+	animation-name: fadeOut;
+	animation-duration: 0.2s;
+} */
+
+::view-transition-old(*),
+::view-transition-new(*) {
+	animation-duration: 600ms;
+	animation-timing-function: cubic-bezier(0, 0.81, 0.395, 1.47);
+	/* animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275); */
+}

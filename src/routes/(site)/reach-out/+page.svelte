@@ -4,8 +4,6 @@
 	import Email from '$lib/svg/Email.svelte';
 	import Fiverr from '$lib/svg/Fiverr.svelte';
 
-	import '$lib/fonts/HammersmithOne.css';
-	import '$lib/fonts/supreme.css';
 	import Nojs from '$lib/svg/Nojs.svelte';
 </script>
 

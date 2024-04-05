@@ -6,27 +6,24 @@
 	const { chapters } = $props<Chapters>();
 </script>
 
-<table class="chapters">
-	<thead>
-		<tr>
-			<th>Chapter</th>
-			<th>Content</th>
-		</tr>
-	</thead>
-	<tbody>
+<aside class="directory chapters">
+	<h2 class="blog-chapter-title">Chapters</h2>
+	<div class="blog-chapters">
 		{#each chapters as bigChapter, bigIndx}
 			{#each bigChapter as subChapter, smolIndx}
-				<tr class="chapter">
-					<td>
-						<a class="chapterNo chapter-link" href="#{bigIndx}.{smolIndx}">
-							{bigIndx}.{smolIndx}</a
-						></td
-					>
-					<td>
-						<a class="chapter-link" href="#{bigIndx}.{smolIndx}">{subChapter}</a>
-					</td>
-				</tr>
+				<div class="chapter">
+					<a href="#{bigIndx}.{smolIndx}">{subChapter} {bigIndx}.{smolIndx}</a>
+				</div>
 			{/each}
+			<div class="chapter-blank"></div>
 		{/each}
-	</tbody>
-</table>
+	</div>
+</aside>
+
+<style>
+	a {
+		display: inline-block;
+		width: 100%;
+		padding: 0.5rem 2rem;
+	}
+</style>

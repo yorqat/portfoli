@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	const { children } = $props();
 	import Nav from '$lib/Nav.svelte';
 	import Footer from '$lib/Footer.svelte';
@@ -6,11 +6,20 @@
 
 	import '$lib/styles/reduced-motion.css';
 	import '$lib/styles/theme.css';
+	import '$lib/styles/view-transition.css';
+	import '$lib/fonts/site-fonts.css';
+
+	import { type CheckState, initA11y } from '$lib/a11y';
+
+	let reducedMotionInit: CheckState = $state('mixed');
+	let darkInit: CheckState = $state('mixed');
+
+	$effect(() => initA11y(reducedMotionInit, darkInit));
 </script>
 
 <div id="viewport">
 	<SkipNav />
-	<Nav />
+	<Nav {darkInit} {reducedMotionInit} />
 	<main id="content">
 		{@render children()}
 	</main>
@@ -18,6 +27,7 @@
 </div>
 
 <style>
+
 	:global(*) {
 		box-sizing: border-box;
 	}
@@ -30,6 +40,7 @@
 
 	#content {
 		overflow-y: scroll;
+		overflow-x: hidden;
 		scroll-behavior: smooth;
 		position: relative;
 		height: 100%;
@@ -39,6 +50,11 @@
 		background-color: var(--bg);
 		color: var(--clr);
 		color-scheme: var(--clr-scheme);
+		font-family: 'urbanistregular';
+	}
+
+	::selection {
+		background-color: var(--clr2);
 	}
 
 	:global(.container) {
@@ -47,9 +63,6 @@
 
 	/* 2xs */
 	@media (min-width: 200px) {
-		#viewport {
-		}
-
 		:global(.container) {
 			width: 100%;
 			padding-inline: 1.5rem;
@@ -101,7 +114,6 @@
 	/* lg */
 	@media (min-width: 1024px) {
 		:global(.container) {
-			/* max-width: 768px; */
 			/* width: 1024px; */
 			/* border: 2px yellow solid; */
 		}
@@ -110,6 +122,7 @@
 	/* xl */
 	@media (min-width: 1280px) {
 		:global(.container) {
+			max-width: 1024px;
 			/* width: 1280px; */
 			/* border: 2px orange solid; */
 		}
@@ -118,7 +131,8 @@
 	/* 2xl */
 	@media (min-width: 1536px) {
 		:global(.container) {
-			max-width: 1120px;
+			max-width: 1280px;
+			/* padding-inline: 10vw; */
 			/* border: 2px red solid; */
 		}
 	}

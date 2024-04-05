@@ -1,5 +1,4 @@
 <script>
-	import '$lib/fonts/Afacad-Variable.css';
 </script>
 
 <a href="#content">Skip to main content</a>
@@ -13,10 +12,10 @@
 		background-color: var(--bg);
 		color: white;
 		font-size: 1.2rem;
-		font-family: sans-serif;
+		font-family: 'archivoregular', sans-serif;
 		font-weight: 800;
 		text-decoration: none;
-		text-transform: uppercase;
+		/* text-transform: uppercase; */
 		transform: translateY(-200%);
 		transition: transform 200ms;
 		text-align: center;

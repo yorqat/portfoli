@@ -2,6 +2,7 @@
 	--bg: #1b1b1b;
 	--bg2: rgb(12, 12, 12);
 	--clr: #c1c1c1;
+	--clr: #b8b7ba;
 	--clr2: #fff;
 	--header-bg: #0c0c0c;
 	--clr-scheme: dark;
@@ -16,6 +17,7 @@
 	--clr: #5d5d5d;
 	--clr2: rgb(12, 12, 12);
 	--header-bg: #ddd;
+	--header-bg: var(--bg2);
 	--clr-scheme: light;
 
 	--shadow-1: 0px 0px 1px 0px rgb(36, 36, 36);
@@ -26,6 +28,7 @@
 		--bg: #1b1b1b;
 		--bg2: rgb(12, 12, 12);
 		--clr: #c1c1c1;
+		--clr: #b8b7ba;
 		--clr2: #fff;
 		--header-bg: #0c0c0c;
 		--clr-scheme: dark;
@@ -42,6 +45,7 @@
 		--clr: #5d5d5d;
 		--clr2: rgb(12, 12, 12);
 		--header-bg: #ddd;
+		--header-bg: var(--bg2);
 		--clr-scheme: light;
 
 		--shadow-1: 0px 0px 1px 0px rgb(36, 36, 36);
