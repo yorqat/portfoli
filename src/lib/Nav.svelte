@@ -58,19 +58,19 @@
 			<a
 				use:transition={'blogs'}
 				class="nav-route"
-				href="/blogs"
+				href="/blog"
 				aria-current={$page.url.pathname.includes('/blog') ? 'page' : undefined}>Blog</a
 			>
 			<a
 				use:transition={'work'}
 				class="nav-route"
-				href="/mockeries"
+				href="/work"
 				aria-current={$page.url.pathname.includes('/work') ? 'page' : undefined}>Work</a
 			>
 			<a
 				use:transition={'reach'}
 				class="nav-route"
-				href="/reach-out"
+				href="/reach"
 				aria-current={$page.url.pathname.includes('/reach') ? 'page' : undefined}>Reach</a
 			>
 		</nav>
