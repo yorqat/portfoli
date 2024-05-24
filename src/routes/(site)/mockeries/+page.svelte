@@ -1,12 +1,12 @@
 <script>
-	import UnderConstruction from '$lib/UnderConstruction.svelte';
-	import MetaHead from '$lib/MetaHead.svelte';
-	import GuideLine from '$lib/svg/GuideLine.svelte';
+	import UnderConstruction from '$lib/UnderConstruction.svelte'
+	import MetaHead from '$lib/MetaHead.svelte'
+	import GuideLine from '$lib/svg/GuideLine.svelte'
 
-	import { setupViewTransition } from 'sveltekit-view-transition';
-	const { transition } = setupViewTransition();
+	import { setupViewTransition } from 'sveltekit-view-transition'
+	const { transition } = setupViewTransition()
 
-	import '$lib/styles/active-nav/work.css';
+	import '$lib/styles/active-nav/work.css'
 </script>
 
 <MetaHead

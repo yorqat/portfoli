@@ -25,7 +25,25 @@
 
 @keyframes slideInRight {
 	from {
-		left: -2rem;
+		left: 0;
+		opacity: 1;
+	}
+
+	to {
+		left: 5rem;
+		opacity: 0;
+	}
+}
+
+@keyframes slideInLeft {
+	from {
+		left: 5rem;
+		opacity: 0;
+	}
+
+	to {
+		left: 0;
+		opacity: 1;
 	}
 }
 
@@ -49,14 +67,24 @@
 	}
 }
 
-/* ::view-transition-old(*) {
-	animation-name: fadeOut;
-	animation-duration: 0.2s;
-} */
-
 ::view-transition-old(*),
 ::view-transition-new(*) {
 	animation-duration: 600ms;
-	animation-timing-function: cubic-bezier(0, 0.81, 0.395, 1.47);
-	/* animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275); */
+	animation-timing-function: ease-out;
+
+	animation-timing-function: cubic-bezier(0.64, 0.57, 0.67, 1.53);
+}
+
+::view-transition-old(content) {
+	animation-name: slideInRight;
+	animation-timing-function: ease-out;
+	animation-duration: 200ms;
+	animation-timing-function: cubic-bezier(0.64, 0.57, 0.67, 1.53);
+}
+
+::view-transition-new(content) {
+	animation-name: slideInLeft;
+	animation-timing-function: ease-in;
+	animation-duration: 200ms;
+	animation-timing-function: cubic-bezier(0.64, 0.57, 0.67, 1.53);
 }

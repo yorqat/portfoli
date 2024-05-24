@@ -1,5 +1,5 @@
 <script>
-	import '$lib/styles/svg.css';
+	import '$lib/styles/svg.css'
 </script>
 
 <svg fill="none" viewBox="0 0 17 17" xmlns="http://www.w3.org/2000/svg"

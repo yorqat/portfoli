@@ -2,22 +2,22 @@
 	// import "$lib/styles/svg.css";
 
 	$effect(() => {
-		const crossed_out = document.getElementsByClassName('crossed-out');
-		const nojs = document.getElementsByClassName('nojs');
+		const crossed_out = document.getElementsByClassName('crossed-out')
+		const nojs = document.getElementsByClassName('nojs')
 
 		if (nojs) {
-			let arr = [].slice.call(nojs);
+			let arr = [].slice.call(nojs)
 			arr.forEach((nojs) => {
-				nojs.style.color = '#38bf21';
-				nojs.title = 'js is enabled yay!';
-			});
+				nojs.style.color = '#38bf21'
+				nojs.title = 'js is enabled yay!'
+			})
 		}
 
 		if (crossed_out) {
-			let arr = [].slice.call(crossed_out);
-			arr.forEach((crossed_out) => crossed_out.remove());
+			let arr = [].slice.call(crossed_out)
+			arr.forEach((crossed_out) => crossed_out.remove())
 		}
-	});
+	})
 </script>
 
 <div class="nojs" title="js is disabled - enable for functionality">

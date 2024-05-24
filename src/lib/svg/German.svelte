@@ -1,10 +1,10 @@
 <script lang="ts">
-	const { label = '' } = $props();
+	const { label = '' } = $props()
 
-	let lang: 'EN' | 'DE' = 'EN';
+	let lang: 'EN' | 'DE' = 'EN'
 
-	const onclick = () => {};
-	const keydown = () => {};
+	const onclick = () => {}
+	const keydown = () => {}
 </script>
 
 <label id={label} for="{label}-input">{label}</label>

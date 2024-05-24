@@ -1,14 +1,14 @@
 <script>
-	import MetaHead from '$lib/MetaHead.svelte';
-	import BlogChapters from '$lib/BlogChapters.svelte';
-	export const tags = ['gaming', 'game dev', 'devlog'];
-	const chapters = [['Intro', 'ECS', 'Bevy']];
+	import MetaHead from '$lib/MetaHead.svelte'
+	import BlogChapters from '$lib/BlogChapters.svelte'
+	export const tags = ['gaming', 'game dev', 'devlog']
+	const chapters = [['Intro', 'ECS', 'Bevy']]
 	const bevy_code_1 =
-		'use bevy::prelude::*;\n\npub fn move_forward(\n  time: Res<Time>,\n  key_in: Res<Input<KeyCode>>,\n  mut player: Query<&mut Transform, With<Player>>,\n) {\n  if key_in.pressed(KeyCode::W) {\n    let mut player = player.single_mut();\n    player.translation.z += time.delta_seconds();\n  }\n}';
+		'use bevy::prelude::*;\n\npub fn move_forward(\n  time: Res<Time>,\n  key_in: Res<Input<KeyCode>>,\n  mut player: Query<&mut Transform, With<Player>>,\n) {\n  if key_in.pressed(KeyCode::W) {\n    let mut player = player.single_mut();\n    player.translation.z += time.delta_seconds();\n  }\n}'
 
-	import '$lib/styles/view-transition.css';
-	import { setupViewTransition } from 'sveltekit-view-transition';
-	const { transition } = setupViewTransition();
+	import '$lib/styles/view-transition.css'
+	import { setupViewTransition } from 'sveltekit-view-transition'
+	const { transition } = setupViewTransition()
 </script>
 
 <MetaHead
@@ -31,7 +31,7 @@
 		class="img"
 		src="/coob/grash-block.webp"
 		alt="grash block from coob game"
-		use:transition={'/coob/grash-block.webp'}
+		use:transition={'grashblock'}
 	/>
 	<p id="0.0">
 		So right off the bat, this isn't intended to be a minecraft clone, just that block worlds are

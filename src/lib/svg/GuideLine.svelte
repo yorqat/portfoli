@@ -8,7 +8,7 @@
 	<script>
 	</script> -->
 <script>
-	import '$lib/styles/theme.css';
+	import '$lib/styles/theme.css'
 </script>
 
 <svg
@@ -30,13 +30,20 @@
 			<path
 				d="M2500 1L-0.000974047 1"
 				stroke="var(--clr)"
-				stroke-opacity="0.6"
+				stroke-opacity="0.8"
+				stroke-dasharray="22 22"
+			/>
+			<path
+				d="M1 250L1 -0.000974047"
+				stroke="var(--clr)"
+				stroke-opacity="0.8"
 				stroke-dasharray="22 22"
 			/>
 		</pattern>
 	</defs>
 
-	<line x1="0" y1="50%" x2="100%" y2="2" stroke="url(#dashedPattern)" />
+	<!-- <line x1="0" y1="50%" x2="100%" y2="2" stroke="url(#dashedPattern)" /> -->
+	<!-- <line x1="50%" y1="0%" x2="2" y2="100%" stroke="url(#dashedPattern)" /> -->
 </svg>
 
 <style>

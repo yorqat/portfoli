@@ -1,9 +1,9 @@
 <script lang="ts">
 	interface Chapters {
-		chapters: string[][];
+		chapters: string[][]
 	}
 
-	const { chapters } = $props<Chapters>();
+	const { chapters } = $props<Chapters>()
 </script>
 
 <aside class="directory chapters">

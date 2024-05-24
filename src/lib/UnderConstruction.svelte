@@ -1,6 +1,6 @@
 <script>
-	import ConstructionDumpDumper from './svg/Dumper.svelte';
-	import ConstructionDiggerExcavation from './svg/DiggerExcavation.svelte';
+	import ConstructionDumpDumper from './svg/Dumper.svelte'
+	import ConstructionDiggerExcavation from './svg/DiggerExcavation.svelte'
 </script>
 
 <section class="viewport centered">

@@ -1,11 +1,11 @@
 <script>
-	import MetaHead from '$lib/MetaHead.svelte';
-	export const tags = ['Wireguard', 'Linode', 'Web dev', 'Linux'];
+	import MetaHead from '$lib/MetaHead.svelte'
+	export const tags = ['Wireguard', 'Linode', 'Web dev', 'Linux']
 
 	const chapters = [
 		['Intro', 'Create VPS', 'Config Wireguard'],
 		['Test tunnel', 'Forward traffic', 'Profit']
-	];
+	]
 
 	const homeServerWg0 = `[Interface]
 PrivateKey = <generated private key>
@@ -15,7 +15,7 @@ Address = 192.168.4.2
 PublicKey = <VPS public key>
 AllowedIPs = 192.168.4.1/32
 Endpoint = <VPS IP>:55107
-PersistentKeepalive = 25`;
+PersistentKeepalive = 25`
 
 	const vpsWg0 = `[Interface]
 PrivateKey = <generated private key>
@@ -24,9 +24,9 @@ Address = 192.168.4.1
 
 [Peer]
 PublicKey = <home server public key>
-AllowedIPs = 192.168.4.2/32`;
+AllowedIPs = 192.168.4.2/32`
 
-	import BlogChapters from '$lib/BlogChapters.svelte';
+	import BlogChapters from '$lib/BlogChapters.svelte'
 </script>
 
 <MetaHead

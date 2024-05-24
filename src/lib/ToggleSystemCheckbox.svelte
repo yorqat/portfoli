@@ -1,39 +1,39 @@
 <script lang="ts">
-	let aria_disabled = $state(true);
+	let aria_disabled = $state(true)
 
 	$effect(() => {
-		aria_disabled = false;
-	});
+		aria_disabled = false
+	})
 
 	const cycleDefault = () => {
 		if (!aria_disabled) {
 			switch (checked) {
 				case 'true':
-					checked = 'false';
-					break;
+					checked = 'false'
+					break
 				case 'false':
-					checked = 'mixed';
-					break;
+					checked = 'mixed'
+					break
 				case 'mixed':
-					checked = 'true';
-					break;
+					checked = 'true'
+					break
 			}
 		}
-	};
+	}
 
-	let { cycle = cycleDefault, label = '', logic, checked = 'mixed' } = $props();
+	let { cycle = cycleDefault, label = '', logic, checked = 'mixed' } = $props()
 
 	const onclick = () => {
-		cycle();
-		logic(checked);
-	};
+		cycle()
+		logic(checked)
+	}
 
 	const keydown = (e: KeyboardEvent) => {
 		if (e.key === ' ') {
-			cycle();
-			logic(checked);
+			cycle()
+			logic(checked)
 		}
-	};
+	}
 </script>
 
 <label id={label} for="{label}-input">{label}</label>

@@ -6,12 +6,12 @@
 		author = 'Yor Qat',
 		image = '/favicon.svg'
 	} = $props() as {
-		title: string;
-		description: string;
-		keywords: string;
-		author: string;
-		image: string;
-	};
+		title: string
+		description: string
+		keywords: string
+		author: string
+		image: string
+	}
 </script>
 
 <svelte:head>

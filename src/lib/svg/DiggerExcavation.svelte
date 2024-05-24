@@ -1,5 +1,5 @@
 <script>
-	import '$lib/styles/svg.css';
+	import '$lib/styles/svg.css'
 </script>
 
 <svg

@@ -1,20 +1,21 @@
 <script lang="ts">
-	import Nojs from '$lib/svg/Nojs.svelte';
-	import ToggleSystemCheckbox from '$lib/ToggleSystemCheckbox.svelte';
-	import { darkThemeUpdate, reducedMotionUpdate } from '$lib/a11y';
+	import Nojs from '$lib/svg/Nojs.svelte'
+	import ToggleSystemCheckbox from '$lib/ToggleSystemCheckbox.svelte'
+	import { darkThemeUpdate, reducedMotionUpdate } from '$lib/a11y'
 
-	import German from './svg/German.svelte';
+	import German from './svg/German.svelte'
 
 	interface NavProps {
-		darkInit: string;
-		reducedMotionInit: string;
+		darkInit: string
+		reducedMotionInit: string
 	}
 
-	let { darkInit, reducedMotionInit } = $props<NavProps>();
+	let { darkInit, reducedMotionInit } = $props<NavProps>()
 
-	import { setupViewTransition } from 'sveltekit-view-transition';
-	import { page } from '$app/stores';
-	const { transition } = setupViewTransition();
+	import { setupViewTransition } from 'sveltekit-view-transition'
+	import { page } from '$app/stores'
+	const { transition } = setupViewTransition()
+	import '$lib/styles/theme.css'
 </script>
 
 <header id="header">
@@ -72,7 +73,6 @@
 				href="/reach-out"
 				aria-current={$page.url.pathname.includes('/reach-out') ? 'page' : undefined}>Reach</a
 			>
-			<div class="nav-active"></div>
 		</nav>
 	</div>
 </header>
@@ -119,13 +119,14 @@
 			background-color: var(--clr2);
 			color: var(--header-bg);
 			font-family: sans-serif;
-			content: '↷';
+			content: '⌵';
 			font-size: 1.1rem;
 			font-weight: 800;
 			transition:
 				scale 400ms,
 				rotate 800ms;
-			height: 1.5rem;
+			padding: 0.1rem;
+			height: 1.25rem;
 			border-radius: 50%;
 			aspect-ratio: 1;
 		}
@@ -230,8 +231,19 @@
 		padding-top: 2rem;
 		grid-area: 3 / 2 / 3 / 3;
 
-		> .nav-route {
-			@include no-appearance();
+		.nav-route {
+			// @include no-appearance();
+
+			&::after {
+				position: absolute;
+				height: 2px;
+				width: 4rem;
+				top: 4rem;
+				// --left: -200px;
+				left: var(--left);
+
+				background-color: var(--clr2);
+			}
 
 			// tab selection
 			&:focus-visible {

@@ -1,10 +1,11 @@
 <script>
-	import MetaHead from '$lib/MetaHead.svelte';
-	import BlogCard from '$lib/BlogCard.svelte';
+	import MetaHead from '$lib/MetaHead.svelte'
+	import BlogCard from '$lib/BlogCard.svelte'
 
-	import '$lib/styles/view-transition.css';
-	import { setupViewTransition } from 'sveltekit-view-transition';
-	const { transition } = setupViewTransition();
+	import '$lib/styles/view-transition.css'
+	import { setupViewTransition } from 'sveltekit-view-transition'
+	const { transition } = setupViewTransition()
+	import '$lib/styles/blogs.css'
 </script>
 
 <MetaHead
@@ -32,7 +33,7 @@
 	</section>
 
 	<div class="blog-card-items">
-		<BlogCard
+		<!-- <BlogCard
 			anchor="/blogs/gsap-tl-tricks"
 			title={'Using GSAP timeline for animations'}
 			tags={['css', 'web dev']}
@@ -41,19 +42,19 @@
 			anchor="/blogs/gsap-flip-tricks"
 			title={'Using GSAP FLIP for transitions'}
 			tags={['css', 'web dev']}
-		/>
+		/> -->
 		<BlogCard
 			anchor="/blogs/coob-devlog-01"
 			title={'First coob devlog'}
 			tags={['gaming', 'game dev', 'devlog']}
-			thumbnail="/coob/grash-block.webp"
-			{transition}
+			thumbnail="coob/grash-block.webp"
+			transitionThumbnail="grashblock"
 		/>
-		<BlogCard
+		<!-- <BlogCard
 			anchor="/blogs/bypass-isp-how-to"
 			title={'How to bypass ISP port blocking'}
 			tags={['wireguard', 'linode', 'web dev', 'linux']}
-		/>
+		/> -->
 	</div>
 </div>
 

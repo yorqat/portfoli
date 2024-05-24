@@ -10,4 +10,4 @@ export enum BlogTags {
 	Linode
 }
 
-export type Tags = 'linux' | 'webDev' | 'gaming' | 'gameDev' | 'devlog' | 'wireguard' | 'linode';
+export type Tags = 'linux' | 'webDev' | 'gaming' | 'gameDev' | 'devlog' | 'wireguard' | 'linode'

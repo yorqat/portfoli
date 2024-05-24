@@ -1,10 +1,10 @@
 <script>
-	import MetaHead from '$lib/MetaHead.svelte';
-	import Linkedin from '$lib/svg/LinkedinButton.svelte';
-	import Email from '$lib/svg/Email.svelte';
-	import Fiverr from '$lib/svg/Fiverr.svelte';
+	import MetaHead from '$lib/MetaHead.svelte'
+	import Linkedin from '$lib/svg/LinkedinButton.svelte'
+	import Email from '$lib/svg/Email.svelte'
+	import Fiverr from '$lib/svg/Fiverr.svelte'
 
-	import Nojs from '$lib/svg/Nojs.svelte';
+	import Nojs from '$lib/svg/Nojs.svelte'
 </script>
 
 <MetaHead
@@ -20,10 +20,9 @@
 
 <form class="container unpad">
 	<label for="email" id="email-label"> Email </label>
-	<input type="email" name="email" id="email" placeholder="bestboss@mail.com" />
+	<input type="email" name="email" id="email" placeholder="teammate@mail.com" />
 	<label for="text" id="text-label"> Message </label>
-	<textarea name="text" id="text" placeholder="Love your work! We need your skills in our team."
-	></textarea>
+	<textarea name="text" id="text" placeholder="Hi !"></textarea>
 	<button type="submit">
 		<span class="submit-label"> Send </span>
 	</button>

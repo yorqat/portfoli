@@ -4,22 +4,20 @@
 		title,
 		anchor,
 		author = 'Yor Qat',
-		thumbnail
-		// transition
+		thumbnail,
+		transitionThumbnail
 	} = $props() as {
-		tags: string[];
-		title: string;
-		anchor: string;
-		author: string;
-		thumbnail: string | undefined;
-		// transition: (
-		// 	node: HTMLElement | SVGElement,
-		// 	props: string | TransitionAction
-		// ) => { update(new_props: string | TransitionAction): void; destroy(): void } | undefined;
-	};
+		tags: string[]
+		title: string
+		anchor: string
+		author: string
+		thumbnail: string
+		transitionThumbnail: any
+	}
 
-	import '$lib/styles/blogs.css';
-	import type { TransitionAction } from 'sveltekit-view-transition';
+	import '$lib/styles/blogs.css'
+	import { setupViewTransition } from 'sveltekit-view-transition'
+	const { transition } = setupViewTransition()
 </script>
 
 <a class="blog-card-item-container" href={anchor}>
@@ -30,8 +28,12 @@
 				<li class="blog-card-item__tags__tag">{tag}</li>
 			{/each}
 		</ul>
-		{#if thumbnail}
-			<img loading="lazy" class="blog-card-thumbnail" src={thumbnail} alt="grash block" />
-		{/if}
 	</article>
+	<img
+		loading="lazy"
+		class="blog-card-thumbnail"
+		src={thumbnail}
+		alt="grash block"
+		use:transition={transitionThumbnail}
+	/>
 </a>

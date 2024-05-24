@@ -1,33 +1,35 @@
 <script lang="ts">
-	const { children } = $props();
-	import Nav from '$lib/Nav.svelte';
-	import Footer from '$lib/Footer.svelte';
-	import SkipNav from '$lib/SkipNav.svelte';
+	const { children } = $props()
 
-	import '$lib/styles/reduced-motion.css';
-	import '$lib/styles/theme.css';
-	import '$lib/styles/view-transition.css';
-	import '$lib/fonts/site-fonts.css';
+	import Nav from '$lib/Nav.svelte'
+	import Footer from '$lib/Footer.svelte'
+	import SkipNav from '$lib/SkipNav.svelte'
 
-	import { type CheckState, initA11y } from '$lib/a11y';
+	import '$lib/styles/reduced-motion.css'
+	import '$lib/styles/theme.css'
+	import '$lib/styles/view-transition.css'
+	import '$lib/fonts/site-fonts.css'
 
-	let reducedMotionInit: CheckState = $state('mixed');
-	let darkInit: CheckState = $state('mixed');
+	import { type CheckState, initA11y } from '$lib/a11y'
 
-	$effect(() => initA11y(reducedMotionInit, darkInit));
+	let reducedMotionInit: CheckState = $state('mixed')
+	let darkInit: CheckState = $state('mixed')
+
+	$effect(() => initA11y(reducedMotionInit, darkInit))
+	import { setupViewTransition } from 'sveltekit-view-transition'
+	const { transition } = setupViewTransition()
 </script>
 
 <div id="viewport">
 	<SkipNav />
 	<Nav {darkInit} {reducedMotionInit} />
-	<main id="content">
+	<main id="content" use:transition={'content'}>
 		{@render children()}
 	</main>
 	<Footer />
 </div>
 
 <style>
-
 	:global(*) {
 		box-sizing: border-box;
 	}

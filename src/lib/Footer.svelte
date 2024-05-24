@@ -1,11 +1,11 @@
 <script>
-	import Github from '$lib/svg/Github.svelte';
-	import Linkedin from '$lib/svg/Linkedin.svelte';
-	import Twitter from '$lib/svg/Twitter.svelte';
+	import Github from '$lib/svg/Github.svelte'
+	import Linkedin from '$lib/svg/Linkedin.svelte'
+	import Twitter from '$lib/svg/Twitter.svelte'
 
-	const twitter = 'https://twitter.com/aurora_paisley';
-	const github = 'https://github.com/yorqat';
-	const linkedin = 'https://www.linkedin.com/in/aurora-paisley-7aba962b2/';
+	const twitter = 'https://twitter.com/aurora_paisley'
+	const github = 'https://github.com/yorqat'
+	const linkedin = 'https://www.linkedin.com/in/aurora-paisley-7aba962b2/'
 </script>
 
 <footer>
