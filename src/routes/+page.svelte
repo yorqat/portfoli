@@ -40,15 +40,15 @@
 
 		<nav class="links">
 			<div>
-				<a use:transition={'blogs'} href="/blogs">Blog</a>
+				<a use:transition={'blogs'} href="/blog">Blog</a>
 
 			</div>
 			<div>
-				<a use:transition={'work'} href="/mockeries">Work</a>
+				<a use:transition={'work'} href="/work">Work</a>
 
 			</div>
 			<div>
-				<a use:transition={'reach'} href="/reach-out">Reach </a>
+				<a use:transition={'reach'} href="/reach">Reach </a>
 
 			</div>
 		</nav>
