@@ -11,7 +11,7 @@
 		title: string
 		anchor: string
 		author: string
-		thumbnail: string
+		thumbnail: string | undefined
 		transitionThumbnail: any
 	}
 
@@ -20,7 +20,7 @@
 	const { transition } = setupViewTransition()
 </script>
 
-<a class="blog-card-item-container" href={anchor}>
+<a class="blog-card-item-container" href="/blog/{anchor}">
 	<article class="blog-card-item">
 		<h2 class="blog-card-item__title">{title}</h2>
 		<ul class="blog-card-item__tags">
@@ -29,11 +29,13 @@
 			{/each}
 		</ul>
 	</article>
-	<img
-		loading="lazy"
-		class="blog-card-thumbnail"
-		src={thumbnail}
-		alt="grash block"
-		use:transition={transitionThumbnail}
-	/>
+	{#if thumbnail}
+		<img
+			loading="lazy"
+			class="blog-card-thumbnail"
+			src={thumbnail}
+			alt="grash block"
+			use:transition={transitionThumbnail}
+		/>
+	{/if}
 </a>

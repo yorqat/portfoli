@@ -44,17 +44,17 @@
 			tags={['css', 'web dev']}
 		/> -->
 		<BlogCard
-			anchor="/blogs/coob-devlog-01"
+			anchor="coob-devlog-01"
 			title={'First coob devlog'}
 			tags={['gaming', 'game dev', 'devlog']}
 			thumbnail="coob/grash-block.webp"
 			transitionThumbnail="grashblock"
 		/>
-		<!-- <BlogCard
-			anchor="/blogs/bypass-isp-how-to"
+		<BlogCard
+			anchor="bypass-isp-how-to"
 			title={'How to bypass ISP port blocking'}
 			tags={['wireguard', 'linode', 'web dev', 'linux']}
-		/> -->
+		/>
 	</div>
 </div>
 
