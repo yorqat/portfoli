@@ -58,7 +58,7 @@ AllowedIPs = 192.168.4.2/32`
 
 		<p>
 			With this cold indifference how would you expose your epic home server to the world? That's
-			when get our old friends: Wireguard and any of your favorite VPS really
+			when get our old friends: <strong>Wireguard</strong> and any of your favorite <strong>VPS</strong> really
 		</p>
 	</section>
 
@@ -71,12 +71,12 @@ AllowedIPs = 192.168.4.2/32`
 		<ol class="section-steps">
 			<li>
 				<p>
-					After you created your Linode account go to your dashboard and create a linode instance
+					After you created your Linode account <strong>go to your dashboard</strong> and create a linode instance
 				</p>
 				<img class="img" src="/bypass-isp-how-to/0.webp" alt="begin create linode" />
 			</li>
 			<li>
-				<p>Pick a debian-based distro, you may pick Ubuntu but Debian 11 can cook</p>
+				<p>Pick a debian-based distro, you may pick Ubuntu but <strong>Debian 11</strong> can cook</p>
 				<img
 					loading="lazy"
 					class="img"
