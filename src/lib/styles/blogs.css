@@ -63,6 +63,10 @@ h2.section-title {
 	font-size: 1.25rem;
 	line-height: 150%;
 	letter-spacing: 1.2px;
+
+.section strong {
+	color: var(--clr2);
+	font-weight: inherit;
 }
 
 .section-note {
