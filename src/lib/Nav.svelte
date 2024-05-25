@@ -152,8 +152,7 @@
 		animation: drop 500ms forwards;
 		padding: 1.6rem 2rem;
 		border-radius: 16px;
-		border: 0.2px solid var(--clr);
-		// box-shadow: var(--shadow-1);
+		box-shadow: 0 0 8px 1px var(--bg);
 		font-size: 1.2rem;
 
 		.a11y-ctx-menu__title {
