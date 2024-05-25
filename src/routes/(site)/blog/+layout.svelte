@@ -1,5 +1,5 @@
 <script>
-	import '$lib/styles/blogs.css'
+	import '$lib/styles/blog.css'
 	import GuideLine from '$lib/svg/GuideLine.svelte'
 	const { children } = $props()
 
@@ -8,7 +8,7 @@
 	import { setupViewTransition } from 'sveltekit-view-transition'
 	const { transition } = setupViewTransition()
 
-	import '$lib/styles/active-nav/blogs.css'
+	import '$lib/styles/active-nav/blog.css'
 </script>
 
 <div class="blog-layout container">

@@ -5,7 +5,7 @@
 	import '$lib/styles/view-transition.css'
 	import { setupViewTransition } from 'sveltekit-view-transition'
 	const { transition } = setupViewTransition()
-	import '$lib/styles/blogs.css'
+	import '$lib/styles/blog.css'
 </script>
 
 <MetaHead
@@ -34,12 +34,12 @@
 
 	<div class="blog-card-items">
 		<!-- <BlogCard
-			anchor="/blogs/gsap-tl-tricks"
+			anchor="/blog/gsap-tl-tricks"
 			title={'Using GSAP timeline for animations'}
 			tags={['css', 'web dev']}
 		/>
 		<BlogCard
-			anchor="/blogs/gsap-flip-tricks"
+			anchor="/blog/gsap-flip-tricks"
 			title={'Using GSAP FLIP for transitions'}
 			tags={['css', 'web dev']}
 		/> -->

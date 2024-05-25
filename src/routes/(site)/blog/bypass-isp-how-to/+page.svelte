@@ -42,7 +42,7 @@ AllowedIPs = 192.168.4.2/32`
 		<h1 id="0.0" class="section-title">How to bypass ISP port blocking</h1>
 		<div class="tags">
 			{#each tags as tag}
-				<a href="/blogs" class="tag">{tag}</a>
+				<a href="/blog" class="tag">{tag}</a>
 			{/each}
 		</div>
 		<p>

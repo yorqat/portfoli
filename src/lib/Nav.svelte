@@ -56,7 +56,7 @@
 
 		<nav id="nav">
 			<a
-				use:transition={'blogs'}
+				use:transition={'blog'}
 				class="nav-route"
 				href="/blog"
 				aria-current={$page.url.pathname.includes('/blog') ? 'page' : undefined}>Blog</a

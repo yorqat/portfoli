@@ -23,7 +23,7 @@
 	<h1 class="section-title">Coob's first devlog</h1>
 	<div class="tags">
 		{#each tags as tag}
-			<a href="/blogs" class="tag">{tag}</a>
+			<a href="/blog" class="tag">{tag}</a>
 		{/each}
 	</div>
 

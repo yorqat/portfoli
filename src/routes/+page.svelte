@@ -44,7 +44,7 @@
 
 		<nav class="links">
 			<div>
-				<a use:transition={'blogs'} href="/blog">Blog</a>
+				<a use:transition={'blog'} href="/blog">Blog</a>
 			</div>
 			<div>
 				<a use:transition={'work'} href="/work">Work</a>

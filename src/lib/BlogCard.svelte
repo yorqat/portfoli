@@ -15,7 +15,7 @@
 		transitionThumbnail: any
 	}
 
-	import '$lib/styles/blogs.css'
+	import '$lib/styles/blog.css'
 	import { setupViewTransition } from 'sveltekit-view-transition'
 	const { transition } = setupViewTransition()
 </script>
