@@ -29,7 +29,11 @@
 <div id="viewport">
 	<header id="header" class="home">
 		<div class="titular">
-			<div use:transition={'logo'} id="logo" class="hero">Yor Qat</div>
+			<div use:transition={'logo'} id="logo" class="hero">
+				<span>Y</span><span class="collapsible">or</span><span>Q</span><span class="collapsible"
+					>at</span
+				>
+			</div>
 			<div class="titular__subtitle">
 				<div class="hero-subtitle">
 					<div>Developer</div>
@@ -54,8 +58,9 @@
 
 <style lang="scss">
 	#viewport {
-		height: 200vh;
+		height: 600svh;
 		background: var(--bg);
+		color-scheme: var(--clr-scheme);
 	}
 
 	a {
@@ -71,7 +76,6 @@
 
 	* {
 		box-sizing: border-box;
-		color-scheme: var(--clr-scheme);
 	}
 
 	header {
@@ -103,6 +107,20 @@
 		}
 	}
 
+	.collapsible {
+		transition: all 600ms;
+		transition-timing-function: cubic-bezier(0.64, 0.57, 0.67, 1.53);
+		max-width: 3ch;
+		display: inline-flex;
+	}
+
+	.titular:hover {
+		.collapsible {
+			max-width: 0;
+			opacity: 0;
+		}
+	}
+
 	.hero-subtitle {
 		font-family: 'Raleway', sans-serif;
 		font-optical-sizing: auto;
@@ -113,8 +131,6 @@
 
 		text-transform: uppercase;
 		color: var(--clr2);
-
-		grid-area: 2 / 2 / 3 / 3;
 	}
 
 	.links {
