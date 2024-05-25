@@ -142,6 +142,8 @@ a.blog-card-item-container {
 	right: 0;
 	height: 10rem;
 	width: 10rem;
+
+	opacity: 0.4;
 }
 
 .blog-card-item__title {
