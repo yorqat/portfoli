@@ -66,6 +66,17 @@
 				allowfullscreen
 			></iframe>
 		</li>
+		<li class="video-card">
+			<iframe
+				src="https://www.youtube.com/embed/WAuqt1K3rH4?si=K6DiT5pIW1jKMNlX"
+				title="YouTube video player"
+				loading="lazy"
+				frameborder="0"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+				referrerpolicy="strict-origin-when-cross-origin"
+				allowfullscreen
+			></iframe>
+		</li>
 	</ul>
 </section>
 
