@@ -57,7 +57,7 @@
 		</li>
 		<li class="video-card">
 			<iframe
-				src="https://www.youtube-nocookie.com/embed/9dgvhonI7O0?si=IkqXPlcTNR_i5CF2"
+				src="https://www.youtube-nocookie.com/embed/jGtOmTLUMUU?si=wfLLz22N-oGDt1E5"
 				title="YouTube video player"
 				loading="lazy"
 				frameborder="0"
@@ -70,6 +70,10 @@
 </section>
 
 <style>
+	h1 {
+		font-size: 4rem;
+	}
+
 	.implied-consent {
 		width: 40ch;
 		line-height: 1.6rem;
