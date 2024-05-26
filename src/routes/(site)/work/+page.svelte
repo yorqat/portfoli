@@ -35,18 +35,7 @@
 	<ul class="videos">
 		<li class="video-card">
 			<iframe
-				src="https://www.youtube-nocookie.com/embed/VDQd9SyD6p4?si=RlN6W-nRlGIvluBR"
-				title="YouTube video player"
-				frameborder="0"
-				loading="lazy"
-				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-				referrerpolicy="strict-origin-when-cross-origin"
-				allowfullscreen
-			></iframe>
-		</li>
-		<li class="video-card">
-			<iframe
-				src="https://www.youtube-nocookie.com/embed/9dgvhonI7O0?si=IkqXPlcTNR_i5CF2"
+				src="https://www.youtube.com/embed/WAuqt1K3rH4?si=K6DiT5pIW1jKMNlX"
 				title="YouTube video player"
 				loading="lazy"
 				frameborder="0"
@@ -68,10 +57,21 @@
 		</li>
 		<li class="video-card">
 			<iframe
-				src="https://www.youtube.com/embed/WAuqt1K3rH4?si=K6DiT5pIW1jKMNlX"
+				src="https://www.youtube-nocookie.com/embed/9dgvhonI7O0?si=IkqXPlcTNR_i5CF2"
 				title="YouTube video player"
 				loading="lazy"
 				frameborder="0"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+				referrerpolicy="strict-origin-when-cross-origin"
+				allowfullscreen
+			></iframe>
+		</li>
+		<li class="video-card">
+			<iframe
+				src="https://www.youtube-nocookie.com/embed/VDQd9SyD6p4?si=RlN6W-nRlGIvluBR"
+				title="YouTube video player"
+				frameborder="0"
+				loading="lazy"
 				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 				referrerpolicy="strict-origin-when-cross-origin"
 				allowfullscreen
