@@ -13,10 +13,10 @@
 	title="Yor mockups"
 />
 
-<section class="container">
+<!-- <section class="container">
 	<h1>Products</h1>
 	<ul class="products"></ul>
-</section>
+</section> -->
 
 <section class="container">
 	<h1>Youtube</h1>
